@@ -12,6 +12,10 @@
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
+  --mainBlack : #1A202C;
+  --mainBlue: #3563e9;
+  --lighterBlack : #90A3BF;
+  --mainRed : #ED3F3F;
 
 }
 
