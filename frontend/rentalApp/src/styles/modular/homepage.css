@@ -1,0 +1,15 @@
+.HomePage_Hero{
+	background-image: url("./background.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.HomePage_Hero::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .3;
+}
