@@ -12,7 +12,6 @@ function ComponentCar(props) {
         Display: 'flex',
         justifyContent: 'centre', 
         borderRadius:'10px',
-
      }}>
         <div className="flex items-center w-full justify-between my-3 ">
             <div className='ComponentCar_Titles  ' >
@@ -23,9 +22,13 @@ function ComponentCar(props) {
         <h2 className="text-lighterBlack"
                  > {props.marque} </h2>
             </div>
-            {props.favoris && <AiFillHeart className="text-mainRed text-2xl cursor-pointer transition-transform hover:scale-110" />}
+         {
+            !props.inAdmin && <>
+             {props.favoris && <AiFillHeart className="text-mainRed text-2xl cursor-pointer transition-transform hover:scale-110" />}
             {!props.favoris && <AiOutlineHeart className="text-2xl cursor-pointer transition-transform hover:scale-110" />}
-        </div>
+            </>          
+         }  
+            </div>
 
 
         <div className='ComponentCar_ImageCar_Fog'>
@@ -61,7 +64,7 @@ function ComponentCar(props) {
             <div>
                 <h2 className='ComponentCar_PriceCar'> {props.PriceCar} MAD<span className="text-lighterBlack ">/day</span> </h2>
             </div>
-            <button className='ComponentCar_ButtonAnimation'> Rent Now </button>
+            <button className={'ComponentCar_ButtonAnimation '+ (props.inAdmin ? " ComponentCar_RedAnimation " : " ComponentCar_BlueAnimation " )  }> {props.ButtonTitle} </button>
 
         </div>
 

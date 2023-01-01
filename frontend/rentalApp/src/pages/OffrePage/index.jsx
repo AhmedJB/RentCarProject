@@ -8,6 +8,8 @@ import CarImage5 from "../../assets/CarsImages/car 5.svg";
 import CarImage1 from "../../assets/CarsImages/car 1.svg";
 import Header from "../../components/General/Header";
 import Offreside from "../../components/OffrePageComponent/Offreside";
+import Footer from "../../components/Footer"
+
 
 function OffrePage() {
   const data = [
@@ -128,7 +130,7 @@ function OffrePage() {
   return (
     <>
       <Header></Header>
-      <div className="Offrepage_container pt-[101px] container mx-auto">
+      <div className="Offrepage_container pt-[101px] container mx-auto mb-16">
         <div className="Offrepage_sidebar" >
             <Offreside data={data} />
 
@@ -143,7 +145,7 @@ function OffrePage() {
               marque={e.marque}
                 imageUrl={e.imageUrl}
               owner={e.owner}
-              buttonText={"Rent Now"}
+              ButtonTitle={"Rent Now"}
               CapacityLitre={e.CapacityLitre}
               TypeMorAuto={e.TypeMorAuto}
               NmbrPlace={e.NmbrPlace}
@@ -151,13 +153,14 @@ function OffrePage() {
               favoris={e.favoris}
               couleur={e.couleur}
               
+              
             />
           );
         })}
       </div>
             </div>
       </div>
-
+       <Footer/>
       
     </>
   );

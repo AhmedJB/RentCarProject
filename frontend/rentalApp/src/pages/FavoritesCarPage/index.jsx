@@ -13,7 +13,8 @@ import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
 
-function OffreDetails() {
+function FavoritesCarPage() {
+
   const data = [
     {
       title: "Koenigsegg",
@@ -24,7 +25,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -50,7 +51,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -63,7 +64,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -75,7 +76,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -87,7 +88,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -99,7 +100,7 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
@@ -123,45 +124,26 @@ function OffreDetails() {
       CapacityLitre: 10000,
       couleur:"Noir",
       TypeMorAuto: "Manual",
-      favoris:false,
+      favoris:true,
       NmbrPlace: 2,
       PriceCar: 99.00,
     },
-  ];
-
+  ]; 
 
   return (
     <>
       <Header></Header>
-      {/* details Offre  */}
+      {/* title favorites Offres */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
-            <OffreDetailsCar
-           title="Nissan GT - R"
-           marque="tesla"
-           favoris= {false}
-           CapacityLitre="10000"
-           TypeMorAuto="Manual"
-           NmbrPlace="2"
-           owner="issam"
-           couleur="red"
-           PriceCar="10000"
-           imageUrl1={CarImageD3}
-           imageUrl2={CarImageD3}
-           imageUrl3={CarImageD3}
-            />
+            <h2 className="px-6 py-6 my-12 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">My Favorites Car </h2>
          
          
       </div>
-      
 
-       {/* autre Offre  */}
+
+       {/* favorites Offres  */}
       <div className=" container mx-auto  flex flex-wrap justify-center py-3 pb-20">
 
-       
-        <a className="" href="HomePage.html">
-            <div className="OffreDetailsViewAll right-aligned text-zinc-600 ">View All</div>
-        </a>
-        <br/>
        
         {data.map((e, i) => {
           return (
@@ -171,13 +153,14 @@ function OffreDetails() {
               marque={e.marque}
                 imageUrl={e.imageUrl}
               owner={e.owner}
-              buttonText={"Rent Now"}
+              ButtonTitle={"Rent Now"}
               CapacityLitre={e.CapacityLitre}
               TypeMorAuto={e.TypeMorAuto}
               NmbrPlace={e.NmbrPlace}
               PriceCar={e.PriceCar}
               favoris={e.favoris}
               couleur={e.couleur}
+              inAdmin={false}
             />
           );
         })}
@@ -191,4 +174,4 @@ function OffreDetails() {
   );
 }
 
-export default OffreDetails;
+export default FavoritesCarPage;
