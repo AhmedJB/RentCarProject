@@ -25,7 +25,7 @@ function Header() {
 
   return (
   <header className={color ? 'w-full absolute z-20 _header _headerbg':'w-full absolute z-20 _header'}>
-      <nav className="container mx-auto flex items-center justify-between py-6  ">
+      <nav className="container mx-auto flex items-center justify-between py-3  ">
         <div id="logo">
           <a href="HomePage.html">
             <img src={logo} alt="logo" height="150px" width="100px" />

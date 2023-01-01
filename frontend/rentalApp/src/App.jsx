@@ -4,6 +4,8 @@ import OffreDetailsCar from './components/OffreDetails/OffreDetailsCar';
 import Homepage from './pages/HomePage';
 import OffreDetails from './pages/OffreDetails';
 import OffrePage from './pages/OffrePage';
+import FavoritesCarPage from './pages/FavoritesCarPage';
+import ManageOffresAdminPage from './pages/ManageOffresAdminPage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,6 +17,11 @@ function App() {
           <Route path="/" element={<Homepage />} />
           <Route path="/offre" element={<OffrePage />} />
           <Route path="/offreDetails"element={<OffreDetails/>} />
+          <Route path="/offreFavorites"element={<FavoritesCarPage/>} />
+          <Route path="/OffreAdmin"element={<ManageOffresAdminPage/>} />
+
+
+          
 
         </Routes>
       </BrowserRouter>

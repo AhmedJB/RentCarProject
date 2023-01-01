@@ -3,8 +3,7 @@
     display: inline-block;
     text-decoration: none;
     font-size:.8em;
-    color: var(--mainBlue);
-    outline: 2px solid var(--mainBlue);
+    
     padding: 5px 10px;
     overflow: hidden;
     transition: color 1s;
@@ -25,13 +24,38 @@
     z-index: -1;
     width: 200%;
     height: 100%;
-    background-color: #3563E9;
+    /* background-color: #3563E9; */
     transform: scaleX(0) skewX(35deg);
     transform-origin: left;
     transition: transform 1s;
     
 
 }
+
+.ComponentCar_BlueAnimation{
+    color: var(--mainBlue);
+    outline: 2px solid var(--mainBlue);
+
+}
+.ComponentCar_RedAnimation{
+
+    color: #cf0909;
+    outline: 2px solid #cf0909;
+}
+
+.ComponentCar_BlueAnimation::before{
+    background-color: var(--mainBlue);
+}
+
+.ComponentCar_RedAnimation::before{
+    background-color: #cf0909;
+
+
+}
+
+
+
+
 .ComponentCar_ButtonAnimation:hover::before{
     transform: scaleX(1) skewX(35deg);
 }
