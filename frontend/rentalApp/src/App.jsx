@@ -7,6 +7,7 @@ import OffreDetails from './pages/OffreDetails';
 import OffrePage from './pages/OffrePage';
 import FavoritesCarPage from './pages/FavoritesCarPage';
 import ManageOffresAdminPage from './pages/ManageOffresAdminPage';
+import ManageProfilAdminPage from './pages/ManageProfilAdminPage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,11 @@ function App() {
           <Route path="/offreDetails"element={<OffreDetails/>} />
           <Route path="/offreFavorites"element={<FavoritesCarPage/>} />
           <Route path="/OffreAdmin"element={<ManageOffresAdminPage/>} />
+          <Route path="/profilAdmin"element={<ManageProfilAdminPage/>} />
           <Route path="/offreHistoric"element={<HistoricPage/>} />
+
+
+          
         </Routes>
       </BrowserRouter>
       
