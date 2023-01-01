@@ -16,6 +16,7 @@
   --mainBlue: #3563e9;
   --lighterBlack : #90A3BF;
   --mainRed : #ED3F3F;
+  --lighterDark2 : #596780;
 
 }
 
@@ -30,4 +31,24 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--mainBlue); 
+  border-radius:10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 

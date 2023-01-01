@@ -1,0 +1,17 @@
+.Offrepage_container {  
+	display: grid;
+	grid-template-columns: 1.5fr 8fr;
+	grid-template-rows: 12fr;
+	gap: 0px 0px;
+	grid-auto-flow: row;
+	grid-template-areas:
+	  "sidebar content"
+	  "sidebar content";
+  }
+  
+  .Offrepage_sidebar { grid-area: sidebar; }
+  
+  .Offrepage_subheader { grid-area: subheader; }
+  
+  .Offrepage_content { grid-area: content; }
+  
