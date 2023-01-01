@@ -7,7 +7,7 @@ import CarImage4 from "../../assets/CarsImages/car 4.svg";
 import CarImage5 from "../../assets/CarsImages/car 5.svg";
 import CarImage1 from "../../assets/CarsImages/car 1.svg";
 import Header from "../../components/General/Header";
-import Offreside from "./Offreside";
+import Offreside from "../../components/OffrePageComponent/Offreside";
 
 function OffrePage() {
   const data = [
@@ -35,7 +35,7 @@ function OffrePage() {
       TypeMorAuto: "Manual",
       favoris:true,
       NmbrPlace: 2,
-      PriceCar: 99.00,
+      PriceCar: 50000.00,
     },
     {
       title: "New MG ZS",
@@ -134,7 +134,7 @@ function OffrePage() {
 
             </div>
         <div className="Offrepage_content" >
-        <div className=" container mx-auto  flex flex-wrap justify-center ">
+        <div className=" container mx-auto  flex flex-wrap justify-center py-3 ">
         {data.map((e, i) => {
           return (
             <ComponentCar

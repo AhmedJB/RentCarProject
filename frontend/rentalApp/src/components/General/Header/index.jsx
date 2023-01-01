@@ -3,7 +3,7 @@ import logo from "../../../assets/general/logo.png"
 
 function Header() {
   return (
-    <header className=" w-screen absolute z-20">
+    <header className=" w-full absolute z-20">
       <nav className="container mx-auto flex items-center justify-between py-6  ">
         <div id="logo">
           <a href="HomePage.html">

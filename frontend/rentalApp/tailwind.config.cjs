@@ -15,6 +15,7 @@ module.exports = {
       mainBlack : '#1A202C',
       lighterBlack : '#90A3BF',
       mainRed : '#ED3F3F',
+      lighterDark2: '#596780',
     },
   },
   plugins: [],

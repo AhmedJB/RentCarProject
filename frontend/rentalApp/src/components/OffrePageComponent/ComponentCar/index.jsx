@@ -28,7 +28,7 @@ function ComponentCar(props) {
         </div>
 
 
-        <div>
+        <div className='ComponentCar_ImageCar_Fog'>
             <img src={props.imageUrl} alt={props.title} className='my-16 w-[300px] h-[120px] ComponentCar_ImageCar'/>
         </div>
 
@@ -59,14 +59,9 @@ function ComponentCar(props) {
 
         <div className="flex items-center w-full justify-between my-3 text-xl">
             <div>
-                <h2 className='ComponentCar_PriceCar'> ${props.PriceCar}<span className="text-lighterBlack "> /day</span> </h2>
+                <h2 className='ComponentCar_PriceCar'> {props.PriceCar} MAD<span className="text-lighterBlack ">/day</span> </h2>
             </div>
-            <button style={{
-                    backgroundColor: '#3563E9',
-                    color: 'white',
-                    padding: '10px 20px',
-                    borderRadius: '4px'
-                 }}> {props.buttonText}</button>
+            <button className='ComponentCar_ButtonAnimation'> Rent Now </button>
 
         </div>
 

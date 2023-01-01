@@ -1,0 +1,49 @@
+.ComponentCar_ButtonAnimation{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size:.8em;
+    color: var(--mainBlue);
+    outline: 2px solid var(--mainBlue);
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: color 1s;
+    font-weight:500;
+    border-radius:2px;
+}
+.ComponentCar_ButtonAnimation:hover{
+    color: #ffffff;
+    
+}
+.ComponentCar_ButtonAnimation::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:-50px;
+    z-index: -1;
+    width: 200%;
+    height: 100%;
+    background-color: #3563E9;
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    transition: transform 1s;
+
+}
+.ComponentCar_ButtonAnimation:hover::before{
+    transform: scaleX(1) skewX(35deg);
+}
+
+.ComponentCar_ImageCar_Fog {
+    position: relative;
+  }
+  
+  .ComponentCar_ImageCar_Fog::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 40%;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(255, 255, 255, 0));
+}
