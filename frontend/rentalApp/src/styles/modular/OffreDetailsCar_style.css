@@ -1,0 +1,76 @@
+.OffreDetailsCar_style {  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  margin-bottom: 40px;
+  grid-template-areas:
+    "OffreDetailsCar_Image OffreDetailsCar_Description";
+   
+}
+
+.OffreDetailsCar_Image { 
+  grid-area: OffreDetailsCar_Image;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  padding:0px;
+  grid-template-areas:
+    "OffreDetailsCar_MainImage"
+    "OffreDetailsCar_OtherImages";
+  max-height: 570px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+ }
+.OffreDetailsCar_Description { 
+  grid-area: OffreDetailsCar_Description;
+  background-color: rgb(255, 255, 255);
+  border-radius: 5px;
+  max-width: 600px;
+  display: grid;
+  place-items: center;
+  
+}
+
+.OffreDetailsCar_OtherImages { 
+  grid-area: OffreDetailsCar_OtherImages;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  padding-bottom: 0;
+  height: 30px;
+  grid-template-areas:
+    "OffreDetailsCar_OtherImageX OffreDetailsCar_OtherImageY OffreDetailsCar_OtherImageZ";
+ }
+
+.OffreDetailsCar_MainImage { 
+  grid-area: OffreDetailsCar_MainImage;
+  background-color: rgb(255, 255, 255);
+
+}
+
+
+
+.OffreDetailsCar_OtherImageY { 
+  grid-area: OffreDetailsCar_OtherImageY;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 0px;
+ }
+
+.OffreDetailsCar_OtherImageZ { 
+  grid-area: OffreDetailsCar_OtherImageZ;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 0px;
+ }
+
+.OffreDetailsCar_OtherImageX { 
+  grid-area: OffreDetailsCar_OtherImageX;
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 0px;
+ }

@@ -8,7 +8,7 @@ import {BsSpeedometer2} from 'react-icons/bs'
 
 function ComponentCar(props) {
   return (
-    <div key={props.key} className='px-10 py-5 mx-4 shadow-xl mt-5' style={{
+    <div key={props.key} className='shadow-xl px-10 py-5 mx-4  mt-5' style={{
         Display: 'flex',
         justifyContent: 'centre', 
         borderRadius:'10px',

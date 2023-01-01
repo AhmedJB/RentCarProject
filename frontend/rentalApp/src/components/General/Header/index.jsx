@@ -6,7 +6,7 @@ import logo from "../../../assets/general/logo.png"
 
 
 function Header() {
-  const  [logged,setLogged] = useState(false);
+  const  [logged,setLogged] = useState(true);
   
   //Change Header Background When Scrolling
   const[color,setColor]=useState(false);
