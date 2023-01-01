@@ -6,6 +6,9 @@ import './styles/modular/header.css'
 import './styles/modular/homepage.css'
 import './styles/modular/footer.css' 
 import './styles/modular/testimonial.css' 
+import './styles/modular/buttonAnimation.css'
+import './styles/modular/offrepage.css'
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

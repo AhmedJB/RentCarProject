@@ -24,7 +24,7 @@ function Header() {
   window.addEventListener('scroll',changeColor)
 
   return (
-    <header className={color ? 'w-full absolute z-20 _header _headerbg':'w-full absolute z-20 _header'}>
+  <header className={color ? 'w-full absolute z-20 _header _headerbg':'w-full absolute z-20 _header'}>
       <nav className="container mx-auto flex items-center justify-between py-6  ">
         <div id="logo">
           <a href="HomePage.html">
