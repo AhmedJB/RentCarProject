@@ -8,6 +8,8 @@ import './styles/modular/footer.css'
 import './styles/modular/testimonial.css' 
 import './styles/modular/buttonAnimation.css'
 import './styles/modular/offrepage.css'
+import './styles/modular/OffreDetailsCar_style.css'
+import './styles/modular/OffreDetails_General.css'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

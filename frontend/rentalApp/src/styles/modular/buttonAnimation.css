@@ -10,6 +10,8 @@
     transition: color 1s;
     font-weight:500;
     border-radius:2px;
+    z-index: 1;
+    
 }
 .ComponentCar_ButtonAnimation:hover{
     color: #ffffff;
@@ -27,17 +29,25 @@
     transform: scaleX(0) skewX(35deg);
     transform-origin: left;
     transition: transform 1s;
+    
 
 }
 .ComponentCar_ButtonAnimation:hover::before{
     transform: scaleX(1) skewX(35deg);
 }
 
+
+
+
+
+
+
+
 .ComponentCar_ImageCar_Fog {
     position: relative;
   }
   
-  .ComponentCar_ImageCar_Fog::before {
+.ComponentCar_ImageCar_Fog::before {
     content: "";
     position: absolute;
     bottom: 0;

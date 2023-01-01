@@ -150,6 +150,7 @@ function OffrePage() {
               PriceCar={e.PriceCar}
               favoris={e.favoris}
               couleur={e.couleur}
+              
             />
           );
         })}
