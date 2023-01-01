@@ -1,0 +1,79 @@
+.ButtonsProfil {  display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "ButtonsProfilA ButtonsProfilB";
+  }
+  
+  .ButtonsProfilA { 
+    grid-area: ButtonsProfilA;
+    
+ }
+  
+  .ButtonsProfilB { 
+    grid-area: ButtonsProfilB;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "ButtonsProfilAA ButtonsProfilBB";
+
+}
+  
+  .ButtonsProfilAA { 
+    grid-area: ButtonsProfilAA;
+ }
+  
+  .ButtonsProfilBB { 
+    grid-area: ButtonsProfilBB;
+
+}
+
+
+.ComponentCar_BlackAnimation{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size:.8em;
+    
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: color 1s;
+    font-weight:500;
+    border-radius:2px;
+    z-index: 1;
+    
+}
+.ComponentCar_BlackAnimation:hover{
+    color: #ffffff;
+    
+}
+.ComponentCar_BlackAnimation::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left:-50px;
+    z-index: -1;
+    width: 200%;
+    height: 100%;
+    background-color: #000000; 
+    transform: scaleX(0) skewX(35deg);
+    transform-origin: left;
+    transition: transform 1s;
+    
+
+}
+
+.ComponentCar_BlackAnimation:hover::before{
+    transform: scaleX(1) skewX(35deg);
+}
+
+.ComponentCar_BlackAnimation2{
+
+    color: #000000;
+    outline: 2px solid #000000;
+}
