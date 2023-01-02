@@ -1,0 +1,428 @@
+
+
+/* Pen Title */
+.Auth_pen_title {
+  padding: 33px 0;
+  text-align: center;
+  letter-spacing: 1.3px;
+}
+.Auth_pen_title h1 {
+  margin: 0 0 14px;
+  font-size: 32px;
+  font-weight: 300;
+}
+.Auth_pen_title span {
+  font-size: 8px;
+}
+.Auth_pen_title span .fa {
+  color: var(--mainBlue);
+}
+.Auth_pen_title span a {
+  color: var(--mainBlue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+/* Scroll To Bottom */
+#codepen, #portfolio {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #363636;
+  width: 37px;
+  height: 37px;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.3s ease;
+  color: #ffffff;
+  text-align: center;
+}
+#codepen i, #portfolio i {
+  line-height: 37px;
+}
+#codepen:hover, #portfolio:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* CodePen */
+#portfolio {
+  bottom: 64px;
+  right: 24px;
+  background: var(--mainBlue);
+  width: 29px;
+  height: 29px;
+  -webkit-animation: buttonFadeInUp 1s ease;
+  animation: buttonFadeInUp 1s ease;
+}
+#portfolio i {
+  line-height: 29px;
+}
+
+/* Container */
+.Auth_container {
+  position: relative;
+  max-width: 305px;
+  width: 100%;
+  margin: 0 auto 66px;
+}
+.Auth_container.Auth_active .Auth_card:first-child {
+  background: #f2f2f2;
+  margin: 0 10px;
+}
+.Auth_container.Auth_active .Auth_card:nth-child(2) {
+  background: #fafafa;
+  margin: 0 7px;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt {
+  top: 14px;
+  right: 0;
+  width: 100%;
+  min-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  padding: 40px 0 29px;
+  overflow: hidden;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_toggle {
+  position: absolute;
+  top: 29px;
+  right: -46px;
+  box-shadow: none;
+  transform: scale(20);
+  transition: transform 0.3s ease;
+}
+
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_title,
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container,
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_buttonContainer {
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s ease;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_title {
+  transition-delay: 0.3s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container {
+  transition-delay: 0.4s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(2) {
+  transition-delay: 0.5s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(3) {
+  transition-delay: 0.6s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_buttonContainer {
+  transition-delay: 0.7s;
+}
+
+/* Card */
+.Auth_card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 5px;
+  padding: 40px 0 29px 0;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: 0.3s ease;
+  /* Title */
+  /* Inputs */
+  /* Button */
+  /* Footer */
+  /* Alt Card */
+}
+.Auth_card:first-child {
+  background: #fafafa;
+  height: 7px;
+  border-radius: 5px 5px 0 0;
+  margin: 0 7px;
+  padding: 0;
+}
+.Auth_card .Auth_title {
+  position: relative;
+  z-index: 1;
+  border-left: 4px solid var(--mainBlue);
+  margin: 0 0 24px;
+  padding: 7px 0 7px 33px;
+  color: var(--mainBlue);
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.Auth_card .Auth_input_container {
+  position: relative;
+  margin: 0 40px 33px;
+}
+.Auth_card .Auth_input_container input {
+  outline: none;
+  z-index: 1;
+  position: relative;
+  background: none;
+  width: 100%;
+  height: 40px;
+  border: 0;
+  color: #212121;
+  font-size: 17px;
+  font-weight: 400;
+}
+.Auth_card .Auth_input_container input:focus ~ label {
+  color: #9d9d9d;
+  transform: translate(-12%, -50%) scale(0.75);
+}
+.Auth_card .Auth_input_container input:focus ~ .Auth_bar:before, .Auth_card .Auth_input_container input:focus ~ .Auth_bar:after {
+  width: 50%;
+}
+.Auth_card .Auth_input_container input:valid ~ label {
+  color: #9d9d9d;
+  transform: translate(-12%, -50%) scale(0.75);
+}
+.Auth_card .Auth_input_container label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #757575;
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 40px;
+  transition: 0.2s ease;
+}
+.Auth_card .Auth_input_container .Auth_bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #757575;
+  width: 100%;
+  height: 1px;
+}
+.Auth_card .Auth_input_container .Auth_bar:before, .Auth_card .Auth_input_container .Auth_bar:after {
+  content: "";
+  position: absolute;
+  background: var(--mainBlue);
+  width: 0;
+  height: 2px;
+  transition: 0.2s ease;
+}
+.Auth_card .Auth_input_container .Auth_bar:before {
+  left: 50%;
+}
+.Auth_card .Auth_input_container .Auth_bar:after {
+  right: 50%;
+}
+.Auth_card .Auth_buttonContainer {
+  margin: 0 40px;
+  text-align: center;
+}
+.Auth_card .Auth_buttonContainer button {
+  outline: 0;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  background: 0;
+  width: 160px;
+  border: 2px solid #e3e3e3;
+  padding: 14px 0;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+.Auth_card .Auth_buttonContainer button span {
+  position: relative;
+  z-index: 1;
+  color: #ddd;
+  transition: 0.3s ease;
+}
+.Auth_card .Auth_buttonContainer button:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  background: var(--mainBlue);
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  margin: -10px 0 0 -10px;
+  opacity: 0;
+  transition: 0.3s ease;
+}
+.Auth_card .Auth_buttonContainer button:hover, .Auth_card .Auth_buttonContainer button:active, .Auth_card .Auth_buttonContainer button:focus {
+  border-color: var(--mainBlue);
+}
+.Auth_card .Auth_buttonContainer button:hover span, .Auth_card .Auth_buttonContainer button:active span, .Auth_card .Auth_buttonContainer button:focus span {
+  color: var(--mainBlue);
+}
+.Auth_card .Auth_buttonContainer button:active span, .Auth_card .Auth_buttonContainer button:focus span {
+  color: #ffffff;
+}
+.Auth_card .Auth_buttonContainer button:active:before, .Auth_card .Auth_buttonContainer button:focus:before {
+  opacity: 1;
+  transform: scale(10);
+}
+.Auth_card .Auth_footer {
+  margin: 26px 0 0;
+  color: #d3d3d3;
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+}
+.Auth_card .Auth_footer a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+.Auth_card .Auth_footer a:hover {
+  color: #bababa;
+}
+.Auth_card.Auth_alt {
+  position: absolute;
+  top: 26px;
+  right: -46px;
+  z-index: 10;
+  width: 90px;
+  height: 90px;
+  background: none;
+  border-radius: 100%;
+  box-shadow: none;
+  padding: 0;
+  transition: 0.3s ease;
+  /* Toggle */
+  /* Title */
+  /* Input */
+  /* Button */
+}
+.Auth_card.Auth_alt .Auth_toggle {
+  position: relative;
+  background: var(--mainBlue);
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  color: #ffffff;
+  font-size: 38px;
+  line-height: 90px;
+  text-align: center;
+  cursor: pointer;
+}
+.Auth_card.Auth_alt  {
+  content: "";
+  display: inline-block;
+  font: normal normal normal 10px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+.Auth_card.Auth_alt .Auth_title,
+.Auth_card.Auth_alt .Auth_input_container,
+.Auth_card.Auth_alt .Auth_buttonContainer {
+  left: 66px;
+  opacity: 0;
+  visibility: hidden;
+}
+.Auth_card.Auth_alt .Auth_title {
+  position: relative;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_title .Auth_close {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 40px;
+  display: inline;
+  color: #ffffff;
+  font-size: 38px;
+  font-weight: 400;
+}
+.Auth_card.Auth_alt .Auth_title .Auth_close:before {
+  content: "×";
+}
+.Auth_card.Auth_alt .Auth_input_container input {
+  color: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_input_container input:focus ~ label {
+  color: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_input_container input:focus ~ .Auth_bar:before, .Auth_card.Auth_alt .Auth_input_container input:focus ~ .Auth_bar:after {
+  background: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_input_container input:valid ~ label {
+  color: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_input_container label {
+  color: rgba(255, 255, 255, 0.8);
+}
+.Auth_card.Auth_alt .Auth_input_container .Auth_bar {
+  background: rgba(255, 255, 255, 0.8);
+}
+.Auth_card.Auth_alt .Auth_buttonContainer button {
+  width: 100%;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+.Auth_card.Auth_alt .Auth_buttonContainer button span {
+  color: var(--mainBlue);
+}
+.Auth_card.Auth_alt .Auth_buttonContainer button:hover {
+  background: rgba(255, 255, 255, 0.9);
+}
+.Auth_card.Auth_alt .Auth_buttonContainer button:active:before, .Auth_card.Auth_alt .Auth_buttonContainer button:focus:before {
+  display: none;
+}
+
+/* Keyframes */
+@-webkit-keyframes buttonFadeInUp {
+  0% {
+    bottom: 20px;
+    opacity: 0;
+  }
+}
+@keyframes buttonFadeInUp {
+  0% {
+    bottom: 20px;
+    opacity: 0;
+  }
+}
+.Auth_input_container_options{
+    background-color: var(--mainBlue);
+}
+
+
+.Auth_input_container {
+    display: grid; 
+    grid-template-columns: 1fr 2fr; 
+    grid-template-rows: 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "Auth_input_containeA Auth_input_containeB"; 
+  }
+  .Auth_input_containeA { 
+    grid-area: Auth_input_containeA;
+    background-color: var(--mainBlue);
+
+ }
+  .Auth_input_containeB { 
+    grid-area: Auth_input_containeB;
+    background-color: var(--mainBlue);
+
+ }
+ .labeltype{
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 9px;
+ }
+ .Auth_input_containeSelector{
+    color: #000000;
+    
+ }
+
+
+
+
+
+ 

@@ -8,6 +8,8 @@ import OffrePage from './pages/OffrePage';
 import FavoritesCarPage from './pages/FavoritesCarPage';
 import ManageOffresAdminPage from './pages/ManageOffresAdminPage';
 import ManageProfilAdminPage from './pages/ManageProfilAdminPage';
+import Auth from './pages/Auth';
+import CreateOffrePage from './pages/CreateOffrePage';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -23,6 +25,9 @@ function App() {
           <Route path="/OffreAdmin"element={<ManageOffresAdminPage/>} />
           <Route path="/profilAdmin"element={<ManageProfilAdminPage/>} />
           <Route path="/offreHistoric"element={<HistoricPage/>} />
+          <Route path="/auth"element={<Auth />} />
+          <Route path="/CreateOffrePage"element={<CreateOffrePage />} />
+
 
 
           

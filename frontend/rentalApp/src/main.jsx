@@ -12,6 +12,10 @@ import './styles/modular/OffreDetailsCar_style.css'
 import './styles/modular/OffreDetails_General.css'
 import './styles/modular/HistoricStyle.css'
 import './styles/modular/ButtonsProfil.css'
+import './styles/modular/auth.css'
+import './styles/modular/CreateOffrePageStyle.css'
+import './styles/modular/OffreDetailsPageDates.css'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

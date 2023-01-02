@@ -1,0 +1,144 @@
+.CreateOffreComponent {  display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    
+    grid-auto-flow: row;
+    grid-template-areas:
+      "CreateOffreComponentForm CreateOffreImageComponent";
+  }
+  
+  .CreateOffreComponentForm { 
+    grid-area: CreateOffreComponentForm;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: 1px solid rgb(228, 225, 225);
+
+ }
+  
+  .CreateOffreImageComponent { 
+    grid-area: CreateOffreImageComponent;
+    background-color: rgb(255, 255, 255);
+}
+
+.form {
+  width: 375px;
+  margin: auto;
+  border-radius: 5px;
+  padding: 15px;
+  max-height:fit-content;
+  padding-bottom: 37px;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.form input {
+  width: 100%;
+  padding: 7px;
+  border: 1px solid rgb(162, 160, 160);
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+}
+.form textarea{
+  width: 100%;
+  padding: 7px;
+  border: 1px solid rgb(162, 160, 160);
+  border-radius: 4px;
+  font-size: 15px;
+  box-sizing: border-box;
+  margin-bottom: 1px;
+}
+.form button {
+  width: 100%;
+  background-color: #ffffff;
+  color: #16a409;
+  padding: 10px 15px;
+  margin: 6px 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  
+ 
+}
+
+
+.CreateOffreFormLabel{
+  color:#000000
+}
+.CreateOffreFormP{
+  color: var( --lighterDark2);
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+
+
+.CreateOffreComponentButton{
+  position: relative;
+    display: inline-block;
+    text-decoration: none;
+    font-size:.8em;
+    
+    padding: 5px 10px;
+    overflow: hidden;
+    transition: color 1s;
+    font-weight:500;
+    border-radius:2px;
+    z-index: 1;
+}
+
+.CreateOffreComponentButton:hover{
+  color: #ffffff;
+  
+}
+.CreateOffreComponentButton::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left:-50px;
+  z-index: -1;
+  width: 200%;
+  height: 100%;
+  /* background-color: #3563E9; */
+  transform: scaleX(0) skewX(35deg);
+  transform-origin: left;
+  transition: transform 1s;
+  
+
+}
+
+
+.CreateOffreComponentButtonBlue{
+  color: var(--mainBlue);
+  outline: 2px solid var(--mainBlue);
+
+}
+.CreateOffreComponentButtonGreen{
+
+  color: #19cf09;
+  outline: 2px solid #19cf09;
+}
+
+.CreateOffreComponentButtonBlue::before{
+  background-color: var(--mainBlue);
+}
+
+.CreateOffreComponentButtonGreen::before{
+  background-color: #19cf09;
+
+
+}
+
+
+.CreateOffreComponentButton:hover::before{
+  transform: scaleX(1) skewX(35deg);
+}

@@ -89,9 +89,14 @@ function OffreDetailsCar(props) {
             <div>
                 <h2 className='ComponentCar_PriceCar'> {props.PriceCar} MAD<span className="text-lighterBlack ">/day</span> </h2>
             </div>
-            <button className='ComponentCar_ButtonAnimation'> Rent Now </button>
+            <button className='ComponentCar_ButtonAnimation ComponentCar_BlueAnimation'> Rent Now </button>
 
         </div>
+
+        
+        
+
+
 
 
 

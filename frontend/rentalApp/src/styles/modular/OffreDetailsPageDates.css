@@ -1,0 +1,17 @@
+.ContainerDatesReserved{
+    max-width: 200px;
+    border-radius: 30px;
+    padding: 30px;
+    border: 1px solid rgb(205, 205, 205);
+
+    
+}
+.Ligne{
+    color: rgb(152, 144, 144);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.DateR{
+    color: rgb(113, 105, 105);
+}
