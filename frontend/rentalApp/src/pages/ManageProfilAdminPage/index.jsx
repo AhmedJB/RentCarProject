@@ -9,6 +9,7 @@ import CarImage3 from "../../assets/CarsImages/car 3.svg";
 import CarImage4 from "../../assets/CarsImages/car 4.svg";
 import CarImage5 from "../../assets/CarsImages/car 5.svg";
 import CarImage1 from "../../assets/CarsImages/car 1.svg";
+import Checker from '../../components/General/Checker';
 
 function ManageProfilAdminPage() {
 
@@ -103,7 +104,8 @@ function ManageProfilAdminPage() {
 
     return (
       <>
-       <Header/>
+      <Checker>
+      <Header/>
        <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <h2 className="px-6 py-6 mb-12 mt-5 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">Manage Profils</h2>
          
@@ -135,6 +137,9 @@ function ManageProfilAdminPage() {
         })}
       </div>
        <Footer/>
+
+      </Checker>
+       
     </>
     )
   }

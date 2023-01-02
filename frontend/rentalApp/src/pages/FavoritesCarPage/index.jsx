@@ -12,6 +12,7 @@ import CarImageD3 from "../../assets/CarsImages/car1D4.jpg";
 import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
+import Checker from "../../components/General/Checker";
 
 function FavoritesCarPage() {
 
@@ -132,7 +133,9 @@ function FavoritesCarPage() {
 
   return (
     <>
-      <Header></Header>
+    <Checker>
+
+    <Header></Header>
       {/* title favorites Offres */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <h2 className="px-6 py-6 my-12 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">My Favorites Car </h2>
@@ -168,6 +171,8 @@ function FavoritesCarPage() {
 
 
        <Footer/>
+    </Checker>
+     
 
       
     </>

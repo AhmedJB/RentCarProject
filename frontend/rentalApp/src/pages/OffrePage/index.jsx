@@ -9,6 +9,7 @@ import CarImage1 from "../../assets/CarsImages/car 1.svg";
 import Header from "../../components/General/Header";
 import Offreside from "../../components/OffrePageComponent/Offreside";
 import Footer from "../../components/Footer"
+import Checker from "../../components/General/Checker";
 
 
 function OffrePage() {
@@ -129,7 +130,8 @@ function OffrePage() {
 
   return (
     <>
-      <Header></Header>
+    <Checker>
+    <Header></Header>
       <div className="Offrepage_container pt-[101px] container mx-auto mb-16">
         <div className="Offrepage_sidebar" >
             <Offreside data={data} />
@@ -161,6 +163,9 @@ function OffrePage() {
             </div>
       </div>
        <Footer/>
+
+    </Checker>
+      
       
     </>
   );

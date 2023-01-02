@@ -8,6 +8,7 @@ import OffrePage from './pages/OffrePage';
 import FavoritesCarPage from './pages/FavoritesCarPage';
 import ManageOffresAdminPage from './pages/ManageOffresAdminPage';
 import ManageProfilAdminPage from './pages/ManageProfilAdminPage';
+import 'react-toastify/dist/ReactToastify.css';
 import Auth from './pages/Auth';
 import CreateOffrePage from './pages/CreateOffrePage';
 

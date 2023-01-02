@@ -65,6 +65,7 @@
   max-width: 305px;
   width: 100%;
   margin: 0 auto 66px;
+  font-family: 'Roboto', sans-serif;
 }
 .Auth_container.Auth_active .Auth_card:first-child {
   background: #f2f2f2;
@@ -100,6 +101,7 @@
   opacity: 1;
   visibility: visible;
   transition: 0.3s ease;
+
 }
 .Auth_container.Auth_active .Auth_card.Auth_alt .Auth_title {
   transition-delay: 0.3s;
@@ -113,8 +115,27 @@
 .Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(3) {
   transition-delay: 0.6s;
 }
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(4) {
+  transition-delay: 0.8s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(5) {
+  transition-delay: 1s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(6) {
+  transition-delay: 1.2s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(7) {
+  transition-delay: 1.4s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(8) {
+  transition-delay: 1.6s;
+}
+.Auth_container.Auth_active .Auth_card.Auth_alt .Auth_input_container:nth-child(9) {
+  transition-delay: 1.8s;
+}
+
 .Auth_container.Auth_active .Auth_card.Auth_alt .Auth_buttonContainer {
-  transition-delay: 0.7s;
+  transition-delay: 2s;
 }
 
 /* Card */
@@ -149,10 +170,12 @@
   font-size: 22px;
   font-weight: 600;
   text-transform: uppercase;
+  font-family: 'Roboto', sans-serif !important;
 }
 .Auth_card .Auth_input_container {
   position: relative;
   margin: 0 40px 33px;
+  font-family: 'Roboto', sans-serif !important;
 }
 .Auth_card .Auth_input_container input {
   outline: none;
@@ -418,7 +441,20 @@
  }
  .Auth_input_containeSelector{
     color: #000000;
+    padding:7px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size:1.1em;
     
+ }
+
+
+ .Auth_button span{
+  font-family: 'Roboto', sans-serif;
+ }
+
+ .Auth_buttonContainer:hover button{
+  transform: scale(1.05);
  }
 
 
