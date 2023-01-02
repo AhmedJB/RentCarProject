@@ -149,20 +149,56 @@ function OffreDetails() {
            imageUrl2={CarImageD3}
            imageUrl3={CarImageD3}
             />
+
          
          
       </div>
+
+
+
+
+
+      <div className=" ContainerDatesReserved  container mx-auto  flex flex-col justify-start py-3 pb-20 shadow-lg mt-8 mb-4  ">
+
+          <div className="TitlleReserved right-aligned justify-start text-zinc-600 ">Reserved :  </div>
+
+            <hr className='Ligne'/>
+          
+
+        <div className='ComponentDateOccupied'>
+          From :  
+           <span className="DateR"> 26-02-2022</span>
+
+        </div>
+        <div className='ComponentDateOccupied'>
+          To :  
+           <span className="DateR"> 26-02-2022</span>
+
+        </div>
+       
+
+        </div>
+        
       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
        {/* autre Offre  */}
       <div className=" container mx-auto  flex flex-wrap justify-center py-3 pb-20">
 
-       
-        <a className="" href="HomePage.html">
-            <div className="OffreDetailsViewAll right-aligned text-zinc-600 ">View All</div>
-        </a>
-        <br/>
-       
+
         {data.map((e, i) => {
           return (
             <ComponentCar
@@ -171,7 +207,7 @@ function OffreDetails() {
               marque={e.marque}
                 imageUrl={e.imageUrl}
               owner={e.owner}
-              buttonText={"Rent Now"}
+              ButtonTitle={"Rent Now"}
               CapacityLitre={e.CapacityLitre}
               TypeMorAuto={e.TypeMorAuto}
               NmbrPlace={e.NmbrPlace}
