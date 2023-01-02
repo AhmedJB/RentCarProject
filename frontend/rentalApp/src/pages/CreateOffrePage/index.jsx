@@ -12,6 +12,7 @@ import CarImageD3 from "../../assets/CarsImages/car1D4.jpg";
 import Header from "../../components/General/Header";
 import CreateOffre from "../../components/OrderPageComponent/CreateOffre"
 import Footer from "../../components/Footer"
+import Checker from "../../components/General/Checker";
 
 function CreateOffrePage() {
 /*   const data = [
@@ -58,7 +59,8 @@ function CreateOffrePage() {
 
   return (
     <>
-      <Header></Header>
+    <Checker>
+    <Header></Header>
       {/* create Offre  */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <CreateOffre />
@@ -99,6 +101,9 @@ function CreateOffrePage() {
 
 
        <Footer/>
+
+    </Checker>
+      
 
       
     </>

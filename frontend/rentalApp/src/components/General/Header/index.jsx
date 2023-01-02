@@ -2,11 +2,17 @@ import React,{useState} from 'react'
 import { VscHistory } from 'react-icons/vsc'
 import { MdFavorite } from 'react-icons/md'
 import { GiCharacter } from 'react-icons/gi'
+import {BiLogOut,BiAddToQueue} from 'react-icons/bi'
 import logo from "../../../assets/general/logo.png"
+import { useContext } from 'react'
+import { UserContext } from '../../../contexts/User'
+import { logout } from '../../../utils'
+import { Link } from "react-router-dom";
 
 
 function Header() {
   const  [logged,setLogged] = useState(true);
+  const [user,setUser] = useContext(UserContext);
   
   //Change Header Background When Scrolling
   const[color,setColor]=useState(false);
@@ -21,6 +27,10 @@ function Header() {
     }
   }
 
+  const handleLogout = () => {
+    logout(setUser);
+  }
+
   window.addEventListener('scroll',changeColor)
 
   return (
@@ -32,7 +42,7 @@ function Header() {
           </a>
         </div>
         {
-          !logged && <ul className="flex items-center gap-10  text-lg font-medium text-white cursor-pointer ">
+          !logged && <ul className={"flex items-center gap-10  text-lg font-medium  cursor-pointer "+ (color ? "text-white" : "text-mainBlack")}>
           
           <a>
             <li className="hover:scale-110 transition-all ">
@@ -50,25 +60,39 @@ function Header() {
 
         {
           logged &&  
-          <ul className="flex items-center gap-10  text-lg font-medium text-white cursor-pointer ">
+          <ul className={ "flex items-center gap-10  text-lg font-medium  cursor-pointer " + (color ? "text-white" : "text-mainBlack")}>
           
           <a>
+            <li class="li_logo" onClick={handleLogout}>
+                <BiLogOut />
+            </li>
+          </a>
+          
+          <Link to={"/offreHistoric"}>
             <li class="li_logo"> 
             <VscHistory />
             </li>
-          </a>
+          </Link>
 
-          <a>
+          <Link to={"/offreFavorites"}>
             <li class="li_logo">
             <MdFavorite />
             </li>
-          </a>
+          </Link>
+
+          <Link to={"/createoffrepage"}>
+            <li class="li_logo">
+            <BiAddToQueue />
+            </li>
+          </Link>
 
           <a>
             <li class="li_logo">
                 <GiCharacter/>
             </li>
           </a>
+
+          
         </ul>
         }
         

@@ -12,6 +12,7 @@ import CarImageD3 from "../../assets/CarsImages/car1D4.jpg";
 import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
+import Checker from "../../components/General/Checker";
 
 function OffreDetails() {
   const data = [
@@ -132,7 +133,8 @@ function OffreDetails() {
 
   return (
     <>
-      <Header></Header>
+    <Checker>
+    <Header></Header>
       {/* details Offre  */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <OffreDetailsCar
@@ -222,6 +224,9 @@ function OffreDetails() {
 
        <Footer/>
 
+
+    </Checker>
+      
       
     </>
   );

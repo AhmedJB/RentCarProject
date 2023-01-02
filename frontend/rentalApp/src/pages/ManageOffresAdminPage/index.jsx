@@ -132,7 +132,8 @@ function ManageOffresAdminPage() {
 
   return (
     <>
-      <Header></Header>
+    <Checker>
+    <Header></Header>
       {/* title favorites Offres */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <h2 className="px-6 py-6 my-12 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">Manage Offres </h2>
@@ -168,6 +169,9 @@ function ManageOffresAdminPage() {
 
        <Footer/>
 
+
+    </Checker>
+     
       
     </>
   );
