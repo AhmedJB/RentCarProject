@@ -15,6 +15,10 @@ import './styles/modular/ButtonsProfil.css'
 import './styles/modular/auth.css'
 import './styles/modular/CreateOffrePageStyle.css'
 import './styles/modular/OffreDetailsPageDates.css'
+import './styles/modular/ModifierProfilStyle.css'
+
+
+
 import { UserProvider } from './contexts/User'
 import {ToastContainer} from "react-toastify"
 
