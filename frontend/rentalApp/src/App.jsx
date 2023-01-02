@@ -11,6 +11,11 @@ import ManageProfilAdminPage from './pages/ManageProfilAdminPage';
 import 'react-toastify/dist/ReactToastify.css';
 import Auth from './pages/Auth';
 import CreateOffrePage from './pages/CreateOffrePage';
+import ModifierProfilePage from './pages/ModifierProfilePage';
+
+
+
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,8 +33,8 @@ function App() {
           <Route path="/offreHistoric"element={<HistoricPage/>} />
           <Route path="/auth"element={<Auth />} />
           <Route path="/CreateOffrePage"element={<CreateOffrePage />} />
-
-
+          <Route path="/ModifierProfilePage"element={<ModifierProfilePage />} />
+          
 
           
         </Routes>
