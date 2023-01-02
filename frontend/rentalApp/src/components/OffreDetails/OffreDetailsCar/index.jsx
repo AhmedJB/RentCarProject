@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useEffect,useState } from 'react'
 import { AiFillHeart,AiOutlineHeart } from 'react-icons/ai';
 import {FaGasPump} from 'react-icons/fa'
 import {SiCircle} from 'react-icons/Si'
 import {MdPeople} from 'react-icons/md'
 import {BsSpeedometer2} from 'react-icons/bs'
+import { useParams } from 'react-router-dom';
+import { base } from '../../../utils';
 
 
 function OffreDetailsCar(props) {
+    const [index,setIndex] = useState(0)
+    
   return (
     
     <div className="OffreDetailsCar_style ">
@@ -17,19 +21,19 @@ function OffreDetailsCar(props) {
         borderRadius:'10px',}}  >
             {/* lkbira */}
             <div className='OffreDetailsCar_MainImage  my-3 mx-6 py-0 flex items-center justify-center '>
-                <img src={props.imageUrl1} alt={props.title} className='my-2 w-full  rounded-md  ComponentCar_ImageCar'/>
+                <img src={ base +  props.images[index].imagePath} alt={props.title} className='my-2 w-full  rounded-md  ComponentCar_ImageCar'/>
             </div>
             {/* other 3 */}
             <div className='OffreDetailsCar_OtherImages'>
-                    <div className='OffreDetailsCar_OtherImageX'>
-                        <img src={props.imageUrl1} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
+                    <div onClick = {() => setIndex(0)} className='OffreDetailsCar_OtherImageX'>
+                        <img  src={base + props.images[0].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
 
                     </div>
-                    <div className='OffreDetailsCar_OtherImageY'>
-                        <img src={props.imageUrl2} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
+                    <div onClick = {() => setIndex(1)} className='OffreDetailsCar_OtherImageY'>
+                        <img src={base + props.images[1].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
                          </div>
-                    <div className='OffreDetailsCar_OtherImageZ'>
-                        <img src={props.imageUrl3} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px]   ComponentCar_ImageCar'/>
+                    <div onClick = {() => setIndex(2)} className='OffreDetailsCar_OtherImageZ'>
+                        <img src={base + props.images[2].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px]   ComponentCar_ImageCar'/>
                     </div>
             </div>
         </div>
@@ -57,7 +61,7 @@ function OffreDetailsCar(props) {
 
 
         <div className='ComponentCar_ImageCar_Fog'>
-            <h2 className='text-justify '>NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track"NISMO has become the embodiment of Nissan's outstanding performance, inspired by </h2>
+            <h2 className='text-justify '>{props.description} </h2>
         </div>
 
         <div className="flex items-center w-full justify-between my-3 text-lighterBlack">

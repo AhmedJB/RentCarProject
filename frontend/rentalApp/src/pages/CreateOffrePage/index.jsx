@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -14,7 +14,11 @@ import CreateOffre from "../../components/OrderPageComponent/CreateOffre"
 import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
 
+
 function CreateOffrePage() {
+
+  const [files,setFiles] = useState(null);
+  const [openUpload ,setOpenUpload] = useState(false);
 /*   const data = [
     {
       title: "Koenigsegg",
@@ -55,6 +59,8 @@ function CreateOffrePage() {
     },
    
   ]; */
+
+  
 
 
   return (
@@ -104,7 +110,7 @@ function CreateOffrePage() {
 
     </Checker>
       
-
+    
       
     </>
   );

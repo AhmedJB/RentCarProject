@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -13,144 +13,56 @@ import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
+import { useParams } from "react-router-dom";
+import { req } from "../../utils";
+import {toast} from "react-toastify"
 
 function OffreDetails() {
-  const data = [
-    {
-      title: "Koenigsegg",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "MG ZX Exclusice",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage2,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 50000.00,
-    },
-    {
-      title: "New MG ZS",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage3,
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Nissan GT - R",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage1,
+  const {id} = useParams();
+  const [data,setData] = useState([])
+  const [offre,setOffre] = useState(null);
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage4,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage5,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "kamal",
-      imageUrl: CarImage1,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-  ];
+  const getOffre = async (id) => {
+    let resp = await req("createoffer/getoffre/" + id);
+    if (resp){
+      console.log(resp);
+      setOffre(resp);
+      toast.success("Fetched the Offer");
+    }else{
+      toast.error("failed fetching offer");
+    }
+  }
+
+    useEffect(() => {
+        console.log(id);
+        getOffre(id).then(() => console.log("Fetched offre"))
 
 
+    }, [id] );
+ 
   return (
     <>
     <Checker>
     <Header></Header>
       {/* details Offre  */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
-            <OffreDetailsCar
-           title="Nissan GT - R"
-           marque="tesla"
-           favoris= {false}
-           CapacityLitre="10000"
-           TypeMorAuto="Manual"
-           NmbrPlace="2"
-           owner="issam"
-           couleur="red"
-           PriceCar="10000"
-           imageUrl1={CarImageD3}
-           imageUrl2={CarImageD3}
-           imageUrl3={CarImageD3}
-            />
+        {
+          offre && <OffreDetailsCar
+          title={offre.offre.titre}
+          marque={offre.offre.marque}
+          favoris= {offre.isFavoris}
+          CapacityLitre={offre.offre.km}
+          TypeMorAuto="Manual"
+          NmbrPlace={offre.offre.nbrPlace}
+          owner={offre.uinfo.nom}
+          couleur={offre.offre.couleur}
+          PriceCar={offre.offre.prix}
+          description={offre.offre.description}
+          images={offre.images}
+           />
+        }
+            
 
          
          
