@@ -3,18 +3,32 @@ import axios from "axios"
 export const base = "https://localhost:7064"
 
 export const api = base + '/api/'
-//var fileDownload = require('js-file-download');
-function set_header(token = null) {
+function set_header(token = null,fdata=false) {
     try {
         console.log(token);
+
         if (token == null) {
-            var obj = {
-                'Content-Type': 'application/json',
+            if (fdata){
+                var obj = {
+                    'Content-Type': 'multipart/form-data',
+                }
+            }else{
+                var obj = {
+                    'Content-Type': 'application/json',
+                }
             }
+            
         } else {
-            var obj = {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + token
+            if (fdata){
+                var obj = {
+                    'Content-Type': 'multipart/form-data',
+                    'Authorization': 'Bearer ' + token
+                }
+            }else{
+                var obj = {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                }
             }
         }
 
@@ -209,59 +223,7 @@ export const registerUploadFiles = async (files, body, key, endpoint) => {
 
 
 
-export const uploadFiles = async (files, body, key, endpoint) => {
 
-    let form_data = new FormData();
-    let access = sessionStorage.getItem('accessToken');
-    //access =  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4OTc3OTkwLCJqdGkiOiIyY2EyY2NjMjFmMjQ0YjQyYTc3MjgzYjAzZGM2MTdhMSIsInVzZXJfaWQiOjJ9.uGyjMDKwWTMowoBgxNLiDbfijFcwutbKBkLNrXlvnTA"
-    let headers = set_header(access, true);
-    console.log(files)
-    for (let i = 0; i < files.length; i++) {
-        form_data.append(key, files[i], files[i].name);
-    }
-
-    /* form_data.append('front',files.front,files.front.name);
-    form_data.append('back',files.back,files.back.name);
-    form_data.append('selfie',files.selfie,files.selfie.name); */
-
-    for (let key of Object.keys(body)) {
-        form_data.append(key, body[key]);
-    }
-    let url = api + endpoint;
-    try {
-        let resp = await axios.post(url, form_data, {
-            headers
-        })
-        console.log(resp.status)
-
-        if (resp.status == 201) {
-            return true
-        }
-        else {
-            console.log("other errors")
-            return false;
-        }
-    } catch (error) {
-        let resp = error.response
-        console.log(resp)
-        if (resp.status == 401) {
-            let dec = await refreshToken();
-            if (dec) {
-                return uploadFiles(files, body, key, endpoint);
-            } else {
-
-                return false;
-            }
-
-        } else {
-            console.log("other errors")
-            return false;
-        }
-
-    }
-
-
-};
 
 
 
@@ -550,7 +512,7 @@ export async function get_token(body) {
         let access = resp.token;
         sessionStorage.setItem('accessToken', access);
         
-        return preResp;
+        return resp;
     } else {
         return false;
     }
@@ -568,4 +530,53 @@ export function logout(setUser) {
     sessionStorage.removeItem("accessToken");
     setUser(obj);
 }
+
+
+export const uploadFiles = async (files, body, key, endpoint) => {
+
+    let form_data = new FormData();
+    let access = sessionStorage.getItem('accessToken');
+    //access =  "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4OTc3OTkwLCJqdGkiOiIyY2EyY2NjMjFmMjQ0YjQyYTc3MjgzYjAzZGM2MTdhMSIsInVzZXJfaWQiOjJ9.uGyjMDKwWTMowoBgxNLiDbfijFcwutbKBkLNrXlvnTA"
+    let headers = set_header(access, true);
+    console.log(files)
+    for (let i = 0; i < files.length; i++) {
+        form_data.append(key, files[i], files[i].name);
+    }
+
+    /* form_data.append('front',files.front,files.front.name);
+    form_data.append('back',files.back,files.back.name);
+    form_data.append('selfie',files.selfie,files.selfie.name); */
+
+    for (let key of Object.keys(body)) {
+        form_data.append(key, body[key]);
+    }
+    let url = api + endpoint;
+    try {
+        let resp = await axios.post(url, form_data, {
+            headers
+        })
+        console.log(resp.status)
+
+        if (resp.status == 201 || resp.status == 200) {
+            return true
+        }
+        else {
+            console.log("other errors")
+            return false;
+        }
+    } catch (error) {
+        let resp = error.response
+        console.log(resp)
+        if (resp.status == 401) {
+            return false
+
+        } else {
+            console.log("other errors")
+            return false;
+        }
+
+    }
+
+
+};
 

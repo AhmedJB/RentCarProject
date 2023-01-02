@@ -17,7 +17,7 @@ function Checker(props) {
     useEffect(() => {
 
         isLogged().then(r => {
-            if (r) {
+            if (r && user.user) {
                 setLoading(false);
                 
                 let temp = {...user};

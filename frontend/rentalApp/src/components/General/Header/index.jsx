@@ -37,29 +37,29 @@ function Header() {
   <header className={color ? 'w-full absolute z-20 _header _headerbg':'w-full absolute z-20 _header'}>
       <nav className="container mx-auto flex items-center justify-between py-1  ">
         <div id="logo">
-          <a href="HomePage.html">
+         <Link to="/">
             <img src={logo} alt="logo" height="150px" width="100px" />
-          </a>
+          </Link>
         </div>
         {
-          !logged && <ul className={"flex items-center gap-10  text-lg font-medium  cursor-pointer "+ (color ? "text-white" : "text-mainBlack")}>
+          !user.logged && <ul className={"flex items-center gap-10  text-lg font-medium  cursor-pointer "+ (color ? "text-white" : "text-mainBlack")}>
           
-          <a>
+          <Link to="/offre">
             <li className="hover:scale-110 transition-all ">
               Offers
             </li>
-          </a>
+            </Link>
 
-          <a>
+          <Link to="/auth">
             <li className=" w-[100px] p-2 text-center rounded-[4px] shadow-sm bg-mainBlue hover:scale-105 transition-all">
                 Login
             </li>
-          </a>
+          </Link>
         </ul>
         }
 
         {
-          logged &&  
+          user.logged &&  
           <ul className={ "flex items-center gap-10  text-lg font-medium  cursor-pointer " + (color ? "text-white" : "text-mainBlack")}>
           
           <a>

@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState,useContext,useEffect} from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -10,123 +10,38 @@ import Header from "../../components/General/Header";
 import Offreside from "../../components/OffrePageComponent/Offreside";
 import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
+import { base, req } from "../../utils";
+import {toast} from "react-toastify"
+import { UserContext } from "../../contexts/User";
+import { Link } from "react-router-dom";
 
 
 function OffrePage() {
-  const data = [
-    {
-      title: "Koenigsegg",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "MG ZX Exclusice",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage2,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 50000.00,
-    },
-    {
-      title: "New MG ZS",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage3,
+  const [data,setData] = useState([]);
+  const [filtered,setFiltered] = useState([]);
+  const [user,setUser] = useContext(UserContext);
+  
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Nissan GT - R",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage1,
+  const refreshOffers = async () => {
+    let resp = await req("createoffer/" + user.user.user.uid);
+    if (resp){
+      console.log(resp);
+      setData(resp);
+      setFiltered(resp);
+      toast.success("Fetched the data");
+    }else{
+      toast.error("failed fetching data");
+    }
+  }
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage4,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage5,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "kamal",
-      imageUrl: CarImage1,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-  ];
+  useEffect(() => {
+
+    refreshOffers().then(() => console.log("fetched offers"))
+
+  },[user])
+
+
+  
 
   return (
     <>
@@ -139,24 +54,26 @@ function OffrePage() {
             </div>
         <div className="Offrepage_content" >
         <div className=" container mx-auto  flex flex-wrap justify-center py-3 ">
-        {data.map((e, i) => {
+        {filtered.map((e, i) => {
           return (
+            <Link to={"/offredetails/"+e.offre.offreId}>
             <ComponentCar
               key={"card-" + i}
-              title={e.title}
-              marque={e.marque}
-                imageUrl={e.imageUrl}
-              owner={e.owner}
+              title={e.offre.titre}
+              marque={e.offre.marque}
+              imageUrl={ base  +  e.images[0].imagePath}
+              owner={e.uinfo.nom}
               ButtonTitle={"Rent Now"}
-              CapacityLitre={e.CapacityLitre}
-              TypeMorAuto={e.TypeMorAuto}
-              NmbrPlace={e.NmbrPlace}
-              PriceCar={e.PriceCar}
-              favoris={e.favoris}
-              couleur={e.couleur}
+              CapacityLitre={e.offre.km}
+              TypeMorAuto={"Manual"}
+              NmbrPlace={e.offre.nbrPlace}
+              PriceCar={e.offre.prix}
+              favoris={e.isFavoris}
+              couleur={e.offre.couleur}
               
               
             />
+            </Link>
           );
         })}
       </div>

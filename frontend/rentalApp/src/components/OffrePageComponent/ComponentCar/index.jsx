@@ -32,7 +32,7 @@ function ComponentCar(props) {
 
 
         <div className='ComponentCar_ImageCar_Fog'>
-            <img src={props.imageUrl} alt={props.title} className='my-16 w-[300px] h-[120px] ComponentCar_ImageCar'/>
+            <img src={props.imageUrl} alt={props.title} className='my-16 w-full max-h-[100px] ComponentCar_ImageCar'/>
         </div>
 
         <div className="flex items-center w-full justify-between my-3 text-lighterBlack">
