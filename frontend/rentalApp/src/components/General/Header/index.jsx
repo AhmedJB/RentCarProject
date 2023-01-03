@@ -3,6 +3,7 @@ import { VscHistory } from 'react-icons/vsc'
 import { MdFavorite } from 'react-icons/md'
 import { GiCharacter } from 'react-icons/gi'
 import {BiLogOut,BiAddToQueue} from 'react-icons/bi'
+import {AiFillCar} from 'react-icons/ai'
 import logo from "../../../assets/general/logo.png"
 import { useContext } from 'react'
 import { UserContext } from '../../../contexts/User'
@@ -10,7 +11,7 @@ import { logout } from '../../../utils'
 import { Link } from "react-router-dom";
 
 
-function Header() {
+function Header(props) {
   const  [logged,setLogged] = useState(true);
   const [user,setUser] = useContext(UserContext);
   
@@ -45,13 +46,13 @@ function Header() {
           !user.logged && <ul className={"flex items-center gap-10  text-lg font-medium  cursor-pointer "+ (color ? "text-white" : "text-mainBlack")}>
           
           <Link to="/offre">
-            <li className="hover:scale-110 transition-all ">
+            <li className={"hover:scale-110 transition-all " + ( (color || props.home) ? " text-white " : "text-mainBlack")}>
               Offers
             </li>
             </Link>
 
           <Link to="/auth">
-            <li className=" w-[100px] p-2 text-center rounded-[4px] shadow-sm bg-mainBlue hover:scale-105 transition-all">
+            <li className=" w-[100px] p-2 text-center rounded-[4px] shadow-sm bg-mainBlue hover:scale-105 transition-all text-white">
                 Login
             </li>
           </Link>
@@ -59,8 +60,8 @@ function Header() {
         }
 
         {
-          user.logged &&  
-          <ul className={ "flex items-center gap-10  text-lg font-medium  cursor-pointer " + (color ? "text-white" : "text-mainBlack")}>
+          user.logged &&  !user.user.user.isAdmin &&
+          <ul className={ "flex items-center gap-10  text-lg font-medium  cursor-pointer " + ( (color || props.home) ? "text-white" : "text-mainBlack")}>
           
           <a>
             <li class="li_logo" onClick={handleLogout}>
@@ -85,12 +86,48 @@ function Header() {
             <BiAddToQueue />
             </li>
           </Link>
+          
 
-          <a>
+          <Link to={"/offre"}>
+            <li class="li_logo">
+            <AiFillCar />
+            </li>
+          </Link>
+
+          <Link to={"/ModifierProfilePage"}>
             <li class="li_logo">
                 <GiCharacter/>
             </li>
+          </Link>
+
+          
+        </ul>
+        }
+
+{
+          user.logged &&  user.user.user.isAdmin &&
+          <ul className={ "flex items-center gap-10  text-lg font-medium  cursor-pointer " + ( (color || props.home) ? "text-white" : "text-mainBlack")}>
+          
+          <a>
+            <li class="li_logo" onClick={handleLogout}>
+                <BiLogOut />
+            </li>
           </a>
+          
+          
+          
+
+          <Link to={"/offreAdmin"}>
+            <li class="li_logo">
+            <AiFillCar />
+            </li>
+          </Link>
+
+          <Link to={"/profilAdmin"}>
+            <li class="li_logo">
+                <GiCharacter/>
+            </li>
+          </Link>
 
           
         </ul>

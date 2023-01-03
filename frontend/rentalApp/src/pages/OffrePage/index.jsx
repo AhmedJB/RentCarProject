@@ -14,13 +14,15 @@ import { base, req } from "../../utils";
 import {toast} from "react-toastify"
 import { UserContext } from "../../contexts/User";
 import { Link } from "react-router-dom";
+import Reservation from "../../components/Reservation";
 
 
 function OffrePage() {
   const [data,setData] = useState([]);
   const [filtered,setFiltered] = useState([]);
   const [user,setUser] = useContext(UserContext);
-  
+  const [openModal,setOpenModal] = useState(false);
+  const [selectedOffre,setSelectedOffre] = useState(null);
 
   const refreshOffers = async () => {
     let resp = await req("createoffer/" + user.user.user.uid);
@@ -49,16 +51,16 @@ function OffrePage() {
     <Header></Header>
       <div className="Offrepage_container pt-[101px] container mx-auto mb-16">
         <div className="Offrepage_sidebar" >
-            <Offreside data={data} />
+            <Offreside data={data} setFiltered={setFiltered} />
 
             </div>
         <div className="Offrepage_content" >
         <div className=" container mx-auto  flex flex-wrap justify-center py-3 ">
         {filtered.map((e, i) => {
           return (
-            <Link to={"/offredetails/"+e.offre.offreId}>
+            
             <ComponentCar
-              key={"card-" + i}
+              key={"cardoffrepage-" + i}
               title={e.offre.titre}
               marque={e.offre.marque}
               imageUrl={ base  +  e.images[0].imagePath}
@@ -70,10 +72,13 @@ function OffrePage() {
               PriceCar={e.offre.prix}
               favoris={e.isFavoris}
               couleur={e.offre.couleur}
+              offreId={e.offre.offreId}
+              refresh = {refreshOffers}
+              handleSelect = {() => { setSelectedOffre(e); setOpenModal(true)  }}
               
               
             />
-            </Link>
+            
           );
         })}
       </div>
@@ -82,6 +87,11 @@ function OffrePage() {
        <Footer/>
 
     </Checker>
+    <Reservation
+    open = {[openModal,setOpenModal]}
+    offre = {selectedOffre}
+   
+    />
       
       
     </>

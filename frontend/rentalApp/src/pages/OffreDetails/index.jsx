@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState,useEffect, useContext} from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -14,17 +14,28 @@ import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
 import { useParams } from "react-router-dom";
-import { req } from "../../utils";
+import { req, base } from "../../utils";
 import {toast} from "react-toastify"
+
+import { Link } from "react-router-dom";
+import ReservationInfo from "./ReservationInfo";
+import Reservation from "../../components/Reservation";
+import { UserContext } from "../../contexts/User";
 
 function OffreDetails() {
 
   const {id} = useParams();
   const [data,setData] = useState([])
   const [offre,setOffre] = useState(null);
+  const [reservations,setReservations] = useState([]);
+  const [openModal,setOpenModal] = useState(false);
+  const [selectedOffre,setSelectedOffre] = useState(null);
+  const [user,setUser] = useContext(UserContext);
+  
 
   const getOffre = async (id) => {
-    let resp = await req("createoffer/getoffre/" + id);
+    setOffre(null);
+    let resp = await req("createoffer/getoffre/" + id+"/"+user.user.user.uid);
     if (resp){
       console.log(resp);
       setOffre(resp);
@@ -34,112 +45,122 @@ function OffreDetails() {
     }
   }
 
+
+  const getSellerOffers = async (id) => {
+    let resp = await req("createoffer/getselleroffre/"+ id+"/"+user.user.user.uid);
+    if (resp){
+      setData(resp);
+    }else{
+      toast.error("failed getting offers")
+    }
+  }
+
+  const getReservations = async (id) => {
+    let resp = await req("createoffer/getreservations/"+id);
+    if (resp){
+      setReservations(resp);
+    }else{
+      toast.error("failed getting offers")
+    }
+  }
+
     useEffect(() => {
         console.log(id);
         getOffre(id).then(() => console.log("Fetched offre"))
+        getSellerOffers(id).then(() => console.log("Got offers"))
+        getReservations(id).then(() => console.log("done fetching reservations"))
 
 
     }, [id] );
  
   return (
     <>
-    <Checker>
-    <Header></Header>
-      {/* details Offre  */}
-      <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
-        {
-          offre && <OffreDetailsCar
-          title={offre.offre.titre}
-          marque={offre.offre.marque}
-          favoris= {offre.isFavoris}
-          CapacityLitre={offre.offre.km}
-          TypeMorAuto="Manual"
-          NmbrPlace={offre.offre.nbrPlace}
-          owner={offre.uinfo.nom}
-          couleur={offre.offre.couleur}
-          PriceCar={offre.offre.prix}
-          description={offre.offre.description}
-          images={offre.images}
-           />
-        }
-            
-
-         
-         
-      </div>
-
-
-
-
-
-      <div className=" ContainerDatesReserved  container mx-auto  flex flex-col justify-start py-3 pb-20 shadow-lg mt-8 mb-4  ">
-
-          <div className="TitlleReserved right-aligned justify-start text-zinc-600 ">Reserved :  </div>
-
-            <hr className='Ligne'/>
-          
-
-        <div className='ComponentDateOccupied'>
-          From :  
-           <span className="DateR"> 26-02-2022</span>
-
-        </div>
-        <div className='ComponentDateOccupied'>
-          To :  
-           <span className="DateR"> 26-02-2022</span>
-
-        </div>
-       
-
-        </div>
-        
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-       {/* autre Offre  */}
-      <div className=" container mx-auto  flex flex-wrap justify-center py-3 pb-20">
-
-
-        {data.map((e, i) => {
-          return (
-            <ComponentCar
-              key={"card-" + i}
-              title={e.title}
-              marque={e.marque}
-                imageUrl={e.imageUrl}
-              owner={e.owner}
-              ButtonTitle={"Rent Now"}
-              CapacityLitre={e.CapacityLitre}
-              TypeMorAuto={e.TypeMorAuto}
-              NmbrPlace={e.NmbrPlace}
-              PriceCar={e.PriceCar}
-              favoris={e.favoris}
-              couleur={e.couleur}
+      <Checker>
+        <Header></Header>
+        {/* details Offre  */}
+        <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
+          {offre && (
+            <OffreDetailsCar
+              key="mainCardCar"
+              title={offre.offre.titre}
+              marque={offre.offre.marque}
+              favoris={offre.isFavoris}
+              CapacityLitre={offre.offre.km}
+              TypeMorAuto="Manual"
+              NmbrPlace={offre.offre.nbrPlace}
+              owner={offre.uinfo.nom}
+              couleur={offre.offre.couleur}
+              PriceCar={offre.offre.prix}
+              description={offre.offre.description}
+              images={offre.images}
+              offreId={offre.offreId}
+              refresh = {() => {
+                getSellerOffers(id)
+                getOffre(id);
+              }
+              }
+              handleSelect = {() => { setSelectedOffre(offre); setOpenModal(true)  }}
             />
-          );
-        })}
-      </div>
+          )}
+        </div>
 
+        {reservations.length == 0 && (
+          <h1 className="text-center text-2xl text-mainBlack">
+            There is no reservations currently
+          </h1>
+        )}
 
-       <Footer/>
+        {reservations.length > 0 && (
+          <div className="max-w-[1200px] flex items-center gap-1">
+            {reservations.map((e, i) => {
+              return <ReservationInfo key={"res-" + i} {...e} />;
+            })}
+          </div>
+        )}
 
+        {/* autre Offre  */}
+        <div className=" container mx-auto  flex flex-wrap justify-center py-3 pb-20">
+          {data.length > 0 &&
+            data.map((e, i) => {
+              return (
+                
+                <ComponentCar
+                  key={"cardSeller-" + i}
+                  title={e.offre.titre}
+                  marque={e.offre.marque}
+                  imageUrl={ base  +  e.images[0].imagePath}
+                  owner={e.uinfo.nom}
+                  ButtonTitle={"Rent Now"}
+                  CapacityLitre={e.offre.km}
+                  TypeMorAuto={"Manual"}
+                  NmbrPlace={e.offre.nbrPlace}
+                  PriceCar={e.offre.prix}
+                  favoris={e.isFavoris}
+                  couleur={e.offre.couleur}
+                  offreId={e.offre.offreId}
+                  refresh = {() => {
+                    getSellerOffers(id)
+                    getOffre(id);
+                  }
+                  }
+                  handleSelect = {() => { setSelectedOffre(e); setOpenModal(true)  }}
+                  
+                  
+                />
+                
+              );
+            })}
+        </div>
 
-    </Checker>
-      
-      
+        <Footer />
+      </Checker>
+      <Reservation
+        open = {[openModal,setOpenModal]}
+        offre = {selectedOffre}
+        refresh={getReservations}
+      >
+
+      </Reservation>
     </>
   );
 }

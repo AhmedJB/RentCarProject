@@ -27,7 +27,18 @@ function Checker(props) {
                 }
                 
                 if (props.login){
-                   navigate("/offre")
+                    if (user.user.user.isAdmin){
+                        navigate("/offreAdmin")
+                    }else{
+                        navigate("/offre")
+                    }
+                   
+                }
+
+                if (props.admin){
+                    if (!user.user.user.isAdmin){
+                        navigate("/offre")
+                    }
                 }
             }else{
                 if (!props.login){
@@ -35,7 +46,7 @@ function Checker(props) {
                     navigate("/auth")
                 }  
                 console.log("navigation here");
-                setLoading(false);   
+                setLoading(false);  
                 
             }
         })

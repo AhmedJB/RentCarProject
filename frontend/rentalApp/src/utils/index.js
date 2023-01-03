@@ -385,6 +385,36 @@ export async function req(url) {
 
 }
 
+export async function deleteReq(url) {
+    let access = sessionStorage.getItem('accessToken');
+    let headers = set_header(access);
+
+    let options = {
+        method: 'delete',
+        headers: headers,
+        mode: 'cors'
+    }
+
+    let preResp = await fetch(api + url, options);
+    if (preResp.ok) {
+        try{
+            let resp = await preResp.json();
+        return resp;
+        }catch {
+            return true;
+        }
+        
+    } else if (preResp.status == 401) {
+        return false;
+    } else {
+        console.log('other errors');
+        return false;
+    }
+
+
+}
+
+
 
 export async function postReq(url, body) {
     let access = sessionStorage.getItem('accessToken');
@@ -398,9 +428,43 @@ export async function postReq(url, body) {
 
     let preResp = await fetch(api + url, options);
     if (preResp.ok) {
-        let resp = await preResp.json();
+        try{
+            let resp = await preResp.json();
         console.log(resp);
         return resp;
+        }catch {
+            return true;
+        }
+        
+    } else if (preResp.status == 401) {
+        return false;
+    } else {
+        console.log('other errors');
+        return false;
+    }
+
+}
+
+export async function putReq(url, body) {
+    let access = sessionStorage.getItem('accessToken');
+    let headers = set_header(access);
+    let options = {
+        method: 'put',
+        body: JSON.stringify(body),
+        headers: headers,
+        mode: 'cors'
+    }
+
+    let preResp = await fetch(api + url, options);
+    if (preResp.ok) {
+        try{
+            let resp = await preResp.json();
+        console.log(resp);
+        return resp;
+        }catch {
+            return true;
+        }
+        
     } else if (preResp.status == 401) {
         return false;
     } else {

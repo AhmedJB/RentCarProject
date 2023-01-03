@@ -16,6 +16,8 @@ import './styles/modular/auth.css'
 import './styles/modular/CreateOffrePageStyle.css'
 import './styles/modular/OffreDetailsPageDates.css'
 import './styles/modular/ModifierProfilStyle.css'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 
 
 
@@ -27,6 +29,7 @@ import {ToastContainer} from "react-toastify"
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <UserProvider>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
     <App />
     <ToastContainer
       position="bottom-center"
@@ -40,6 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       pauseOnHover
       theme="light"
       />
+      </LocalizationProvider>
     </UserProvider>    
   </React.StrictMode>,
 )

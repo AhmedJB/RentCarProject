@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState,useContext,useEffect} from 'react'
 import Footer from '../../components/Footer';
 import Header from '../../components/General/Header';
 import HomePageComponent from '../../components/HomePageComponent';
@@ -10,97 +10,32 @@ import CarImage4 from "../../assets/CarsImages/car 4.svg";
 import CarImage5 from "../../assets/CarsImages/car 5.svg";
 import CarImage1 from "../../assets/CarsImages/car 1.svg";
 import Checker from '../../components/General/Checker';
+import {toast} from "react-toastify"
+import { req } from '../../utils';
+import { UserContext } from '../../contexts/User';
+
 
 function ManageProfilAdminPage() {
 
-    const data = [
-        {
-            ClientId: 1,
-            Nom: "Elotmani",
-            Prenom: "issam",
-            Address:"rabat",
-            Telephone:"0608908060",
-            Email : "issam@gmail.com",
-           date :"12-05-2021",
-           imageUrl: CarImage3,
-        //   buttonText: "Rent Now",
-          CapacityLitre: 10000,
-          couleur:"Noir",
-          TypeMorAuto: "Manual",
-        //   favoris:false,
-           NmbrPlace: 2,
-           PriceCar: 3000.00,
-        },
-        {
-            ClientId: 2,
-            Nom: "Elhachimi",
-            Prenom: "fadel",
-            Address:"taza",
-            Telephone:"0608908060",
-            Email : "issam@gmail.com",
-          date :"12-05-2021",
-          imageUrl: CarImage1,
-        //   buttonText: "Rent Now",
-          CapacityLitre: 10000,
-           couleur:"Noir",
-           TypeMorAuto: "Manual",
-        //   favoris:true,
-          NmbrPlace: 2,
-          PriceCar: 50000.00,
-        },
-        {
-            ClientId: 3,
-            Nom: "Jabnati",
-            Prenom: "ahmed",
-            Address:"casa",
-            Telephone:"0608908060",
-            Email : "issam@gmail.com",
-            date :"12-05-2021",
-            imageUrl: CarImage4,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-          {
-            ClientId: 4,
-            Nom: "Zelzouli",
-            Prenom: "abde",
-            Address:"barcelone",
-            Telephone:"0608908060",
-            oEmail : "issam@gmail.com",
-            date :"12-05-2021",
-            imageUrl: CarImage5,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-          {
-            ClientId: 5,
-            Nom : "hijazi",
-            Prenom: "yassine",
-            Address:"fes",
-            Telephone:"0608908060",
-            Email : "issam@gmail.com",
-            date :"12-05-2021",
-            imageUrl: CarImage4,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-        
-      ];
+  const [data,setData] = useState([]);
+  const [user,setUser] = useContext(UserContext);
+
+  const refreshOffers = async () => {
+    let resp = await req("admuser");
+    if (resp){
+      console.log(resp);
+      setData(resp);
+      toast.success("Fetched the data");
+    }else{
+      toast.error("failed fetching data");
+    }
+  }
+
+  useEffect(() => {
+
+    refreshOffers().then(() => console.log("fetched offers"))
+
+  },[user])
 
     return (
       <>
@@ -114,24 +49,19 @@ function ManageProfilAdminPage() {
         {data.map((e, i) => {
           return (
             <ManageProfilComponent
-             //key={"card-" + i}
-             ClientId={e.ClientId}
-             Nom={e.Nom}
-             Prenom={e.Prenom}
-             Address={e.Address}
-             date={e.date}
-             Telephone={e.Telephone}
-             Email={e.Email}
-             
-              imageUrl={e.imageUrl}
-              
-            //   buttonText={"Rent Now"}
-               CapacityLitre={e.CapacityLitre}
-               TypeMorAuto={e.TypeMorAuto}
-               NmbrPlace={e.NmbrPlace}
-               PriceCar={e.PriceCar}
-            //   favoris={e.favoris}
-              couleur={e.couleur}
+             key={"cardadmuser-" + i}
+             ClientId={e.user.uid}
+             Nom={e.uinfo.nom}
+             Prenom={e.uinfo.prenom}
+             Address={e.uinfo.address}
+             date={e.uinfo.date}
+             Telephone={e.uinfo.telephone}
+             Email={e.uinfo.email}
+             favoris={e.uinfo.isFavorite}
+             blacklisted={e.uinfo.isBlackListed}
+             uinfo={e.uinfo}
+             refresh ={refreshOffers}
+
             />
           );
         })}

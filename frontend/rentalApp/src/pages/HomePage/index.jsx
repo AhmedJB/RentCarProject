@@ -9,7 +9,7 @@ function Homepage() {
   return (
 	<>
   
-    <Header />
+    <Header home={true} />
     <HomePageComponent />
     <Testimonials/>
     <Footer/>

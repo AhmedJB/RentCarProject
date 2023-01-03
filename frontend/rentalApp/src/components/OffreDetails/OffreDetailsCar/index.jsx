@@ -1,19 +1,43 @@
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useContext } from 'react'
 import { AiFillHeart,AiOutlineHeart } from 'react-icons/ai';
 import {FaGasPump} from 'react-icons/fa'
 import {SiCircle} from 'react-icons/Si'
 import {MdPeople} from 'react-icons/md'
 import {BsSpeedometer2} from 'react-icons/bs'
 import { useParams } from 'react-router-dom';
-import { base } from '../../../utils';
+import { base,postReq } from '../../../utils';
+import { UserContext } from '../../../contexts/User';
+import {toast} from "react-toastify"
 
 
 function OffreDetailsCar(props) {
     const [index,setIndex] = useState(0)
+
+    const [user,setUser] = useContext(UserContext);
+
+    const makeFavoris = async () => {
+        let resp = postReq("favorite/"+props.offreId+"/"+user.user.user.uid);
+        if (resp){
+            toast.success("Added to favoris");
+            props.refresh()
+        }else{
+            toast.error("Failed adding to favoris")
+        }
+    }
+
+    const removeFavoris = async () => {
+        let resp = postReq("favorite/remove/"+props.offreId+"/"+user.user.user.uid);
+        if (resp){
+            toast.success("Removed From favoris");
+            props.refresh()
+        }else{
+            toast.error("Failed removing from favoris")
+        }
+    }
     
   return (
     
-    <div className="OffreDetailsCar_style ">
+    <div key={props.key} className="OffreDetailsCar_style ">
         {/* parent image */}
         <div className='OffreDetailsCar_Image  mx-4  mt-5' style={{
         Display: 'flex',
@@ -21,19 +45,19 @@ function OffreDetailsCar(props) {
         borderRadius:'10px',}}  >
             {/* lkbira */}
             <div className='OffreDetailsCar_MainImage  my-3 mx-6 py-0 flex items-center justify-center '>
-                <img src={ base +  props.images[index].imagePath} alt={props.title} className='my-2 w-full  rounded-md  ComponentCar_ImageCar'/>
+                <img src={ base +  props.images[index].imagePath} alt={props.title} className='my-2 w-full max-h-[400px]  rounded-md  ComponentCar_ImageCar'/>
             </div>
             {/* other 3 */}
             <div className='OffreDetailsCar_OtherImages'>
                     <div onClick = {() => setIndex(0)} className='OffreDetailsCar_OtherImageX'>
-                        <img  src={base + props.images[0].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
+                        <img  src={base + props.images[0].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar transition-transform hover:scale-105 cursor-pointer'/>
 
                     </div>
                     <div onClick = {() => setIndex(1)} className='OffreDetailsCar_OtherImageY'>
-                        <img src={base + props.images[1].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar'/>
+                        <img src={base + props.images[1].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px] ComponentCar_ImageCar transition-transform hover:scale-105 cursor-pointer'/>
                          </div>
                     <div onClick = {() => setIndex(2)} className='OffreDetailsCar_OtherImageZ'>
-                        <img src={base + props.images[2].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px]   ComponentCar_ImageCar'/>
+                        <img src={base + props.images[2].imagePath} alt={props.title} className='rounded-xl my-2 px-2 py-2 w-[180px] h-[130px]   ComponentCar_ImageCar transition-transform hover:scale-105 cursor-pointer'/>
                     </div>
             </div>
         </div>
@@ -54,8 +78,8 @@ function OffreDetailsCar(props) {
         <h2 className="text-lighterBlack"
                  > {props.marque} </h2>
             </div>
-            {props.favoris && <AiFillHeart className="text-mainRed text-2xl cursor-pointer transition-transform hover:scale-110" />}
-            {!props.favoris && <AiOutlineHeart className="text-2xl cursor-pointer transition-transform hover:scale-110" />}
+            {props.favoris && <AiFillHeart onClick={removeFavoris} className="text-mainRed text-2xl cursor-pointer transition-transform hover:scale-110" />}
+            {!props.favoris && <AiOutlineHeart onClick={makeFavoris} className="text-2xl cursor-pointer transition-transform hover:scale-110" />}
         </div>
 
 
@@ -93,7 +117,7 @@ function OffreDetailsCar(props) {
             <div>
                 <h2 className='ComponentCar_PriceCar'> {props.PriceCar} MAD<span className="text-lighterBlack ">/day</span> </h2>
             </div>
-            <button className='ComponentCar_ButtonAnimation ComponentCar_BlueAnimation'> Rent Now </button>
+            <button onClick={props.handleSelect} className='ComponentCar_ButtonAnimation ComponentCar_BlueAnimation'> Rent Now </button>
 
         </div>
 

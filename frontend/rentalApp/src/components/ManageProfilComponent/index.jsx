@@ -2,8 +2,38 @@ import React from 'react'
 import {SiCircle} from 'react-icons/Si'
 import {MdPeople} from 'react-icons/md'
 import {BsSpeedometer2} from 'react-icons/bs'
+import { putReq } from '../../utils'
+import {toast} from "react-toastify"
 
 function ManageProfilComponent(props) {
+
+    const blacklist = async () => {
+        let body = {...props.uinfo}
+        body.isBlackListed = !body.isBlackListed;
+        console.log(body);
+        let resp = await putReq("userinformations/"+body.id,body)
+        if (resp) {
+          toast.success("modified")
+          props.refresh()
+        }else{
+          toast.error("Failed modifying")
+        }
+    }
+
+    const fav = async () => {
+        let body = {...props.uinfo}
+        body.isFavorite = !body.isFavorite;
+        console.log(body);
+        let resp = await putReq("userinformations/"+body.id,body)
+        if (resp) {
+          toast.success("modified")
+          props.refresh()
+        }else{
+          toast.error("Failed modifying")
+        }
+    }
+
+
     return(
         <div class="HistoricCar_container shadow-xl">
             <h2 className=' ComponentCar_CapacityLitre StateCar pt-[10px]'>
@@ -47,10 +77,10 @@ function ManageProfilComponent(props) {
 
                 <div  className='ButtonsProfilB' >
                     <div className='ButtonsProfilAA flex justify-start '>
-                        <button className={"ComponentCar_BlackAnimation  ComponentCar_BlackAnimation2 "   }>Add To BlackList </button>
+                        <button onClick={blacklist} className={"ComponentCar_BlackAnimation  ComponentCar_BlackAnimation2 "   }> {props.uinfo.isBlackListed ? "Remove BlackList" : "Add To BlackList"}  </button>
                     </div>
                     <div className='ButtonsProfilBB flex justify-end'>
-                    <button className={"ComponentCar_ButtonAnimation   ComponentCar_BlueAnimation " }> Add To Favorites </button>
+                    <button onClick={fav} className={"ComponentCar_ButtonAnimation   ComponentCar_BlueAnimation " }> { props.uinfo.isFavorite ? "Remove Favoris" : "Add To Favorites"}  </button>
                     </div>
                 </div>
 

@@ -15,52 +15,13 @@ import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
 
 function ModifierProfilePage() {
-/*   const data = [
-    {
-      title: "Koenigsegg",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage5,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:false,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-   
-  ]; */
+
 
 
   return (
     <>
-   
-    <Header></Header>
+   <Checker>
+   <Header></Header>
       {/* create Offre  */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
             <ModifierProfilComponent />
@@ -75,32 +36,14 @@ function ModifierProfilePage() {
        {/* autre Offre */}
       <div className=" container mx-auto  flex flex-wrap justify-center py-3 pb-20">
 
-       
-       
         <br/>
-       {/* 
-        {data.map((e, i) => {
-          return (
-            <ComponentCar
-              key={"card-" + i}
-              title={e.title}
-              marque={e.marque}
-                imageUrl={e.imageUrl}
-              owner={e.owner}
-              ButtonTitle={"Rent Now"}
-              CapacityLitre={e.CapacityLitre}
-              TypeMorAuto={e.TypeMorAuto}
-              NmbrPlace={e.NmbrPlace}
-              PriceCar={e.PriceCar}
-              favoris={e.favoris}
-              couleur={e.couleur}
-            />
-          );
-        })} */}
+     
       </div>
 
 
        <Footer/>
+   </Checker>
+    
 
     
       

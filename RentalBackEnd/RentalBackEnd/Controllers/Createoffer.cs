@@ -144,7 +144,7 @@ namespace RentalBackEnd.Controllers
             {
                 var images = _context.Images.Where(x => x.OffreId == o.OffreId).ToList();
                 var uinfo = _context.UserInformation.FirstOrDefault(x => x.Uid == o.Uid);
-                bool fav = _context.Favoris.Any(x => x.Uid == id && x.OffreId == o.OffreId);
+                bool fav = _context.Favoris.Where(x => x.Uid == id && x.OffreId == o.OffreId).Count() > 0;
                 resp.Add(new OffreResp() { images = images, offre = o , uinfo = uinfo , isFavoris = fav });
 
 
@@ -153,19 +153,70 @@ namespace RentalBackEnd.Controllers
             return Ok(resp);
         }
 
-        [HttpGet("getoffre/{id}")]
+        [HttpGet("getoffre/{id}/{uid}")]
 
-        public IActionResult getSingleOffre(int id)
+        public IActionResult getSingleOffre(int id,int uid)
         {
             
             var o = _context.Offre.FirstOrDefault(x => x.OffreId == id);
             
             var images = _context.Images.Where(x => x.OffreId == o.OffreId).ToList();
             var uinfo = _context.UserInformation.FirstOrDefault(x => x.Uid == o.Uid);
-            bool fav = _context.Favoris.Any(x => x.Uid == id && x.OffreId == o.OffreId);
+            bool fav = _context.Favoris.Where(x => x.Uid == uid && x.OffreId == o.OffreId).Count() > 0;
             OffreResp or = new OffreResp() { images = images, offre = o, uinfo = uinfo, isFavoris = fav };
             return Ok(or);
         }
+
+
+        [HttpGet("getselleroffre/{id}/{uid}")]
+        public IActionResult getSellerOffres(int id,int uid)
+        {
+            var offf = _context.Offre.FirstOrDefault(x => x.OffreId == id);
+            List<OffreResp> resp = new List<OffreResp>();
+            var offres = _context.Offre.Where(x => x.Uid == offf.Uid).ToList();
+            foreach (var o in offres)
+            {
+                var images = _context.Images.Where(x => x.OffreId == o.OffreId).ToList();
+                var uinfo = _context.UserInformation.FirstOrDefault(x => x.Uid == o.Uid);
+                bool fav = _context.Favoris.Where(x => x.Uid == uid && x.OffreId == o.OffreId).Count() > 0;
+                resp.Add(new OffreResp() { images = images, offre = o, uinfo = uinfo, isFavoris = fav });
+
+
+            }
+
+            return Ok(resp);
+        }
+
+        [HttpGet("getreservations/{id}")]
+
+        public IActionResult getReservations(int id)
+        {
+            return Ok(_context.Reservation.Where(x => x.OffreId == id).ToList());
+        }
+
+        [HttpGet("gethistoric/{id}")]
+        public IActionResult getHistoric(int id)
+        {
+            User u = _context.User.FirstOrDefault(x => x.Uid == id);
+            if (u == null)
+            {
+                return BadRequest("failed");
+            }
+            var offres = _context.Offre.Join(_context.Reservation, (e) => e.OffreId, (f) => f.OffreId, (o, f) => o);
+            List<OffreResp> resp = new List<OffreResp>();
+            foreach (var o in offres)
+            {
+                var images = _context.Images.Where(x => x.OffreId == o.OffreId).ToList();
+                var uinfo = _context.UserInformation.FirstOrDefault(x => x.Uid == o.Uid);
+                bool fav = _context.Favoris.Where(x => x.Uid == id && x.OffreId == o.OffreId).Count() > 0;
+                resp.Add(new OffreResp() { images = images, offre = o, uinfo = uinfo, isFavoris = fav });
+
+
+            }
+            return Ok(resp);
+        }
+
+
 
 
     }

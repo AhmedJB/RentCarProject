@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hPnKh46hJOA/kfsKE+x3CQc+nkvLMjhC1EljLJKZ0Dw=",
+  "Hash": "mSJgSqNShwtdXOOibpU8heMrI53Y58dgJUUvpz3gOmI=",
   "Source": "RentalBackEnd",
   "BasePath": "_content/RentalBackEnd",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "RentalBackEnd\\wwwroot",
       "Source": "RentalBackEnd",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\1CWXNB1AAG42JXFM.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\1CWXNB1AAG42JXFM.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/1CWXNB1AAG42JXFM.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\1CWXNB1AAG42JXFM.png"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\1DCAI03ZAUZ6DGZM.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\1DCAI03ZAUZ6DGZM.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/1DCAI03ZAUZ6DGZM.jpg",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\1DCAI03ZAUZ6DGZM.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\2RPJ56C1XTR664S7",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\2RPJ56C1XTR664S7",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/2RPJ56C1XTR664S7",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\2RPJ56C1XTR664S7"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\2SZ8CMGCDKSZTHQK.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\2SZ8CMGCDKSZTHQK.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/2SZ8CMGCDKSZTHQK.jpg",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\2SZ8CMGCDKSZTHQK.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\3A72PO69ZJ2N6XW0.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\3A72PO69ZJ2N6XW0.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/3A72PO69ZJ2N6XW0.jpg",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\3A72PO69ZJ2N6XW0.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\5CRL1KG18JXPDC3Z.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\5CRL1KG18JXPDC3Z.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/5CRL1KG18JXPDC3Z.jpg",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\5CRL1KG18JXPDC3Z.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\6H3PM2ARE3FGJEIN.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\6H3PM2ARE3FGJEIN.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/6H3PM2ARE3FGJEIN.jpg",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\6H3PM2ARE3FGJEIN.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\6MVYGMXU55M1KDHK.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\6MVYGMXU55M1KDHK.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/6MVYGMXU55M1KDHK.jpg",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\6MVYGMXU55M1KDHK.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\7PHT3Q56LCWWCEX2.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\7PHT3Q56LCWWCEX2.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/7PHT3Q56LCWWCEX2.jpg",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\7PHT3Q56LCWWCEX2.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\7XFZHGUWRSIJAOV5.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\7XFZHGUWRSIJAOV5.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/7XFZHGUWRSIJAOV5.jpg",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\7XFZHGUWRSIJAOV5.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\80CLEKSMJDIY4DOO.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\80CLEKSMJDIY4DOO.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/80CLEKSMJDIY4DOO.jpg",
       "AssetKind": "All",
@@ -204,10 +204,27 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\80CLEKSMJDIY4DOO.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\CGGZJPZO25IJRBEV.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\ANIKWY3ATAYRAULJ.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/ANIKWY3ATAYRAULJ.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\ANIKWY3ATAYRAULJ.png"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\CGGZJPZO25IJRBEV.jpg",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/CGGZJPZO25IJRBEV.jpg",
       "AssetKind": "All",
@@ -221,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\CGGZJPZO25IJRBEV.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\CJ4O7Z6SCCOB6TI3.CJ4O7Z6SCCOB6TI3",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\CJ4O7Z6SCCOB6TI3.CJ4O7Z6SCCOB6TI3",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/CJ4O7Z6SCCOB6TI3.CJ4O7Z6SCCOB6TI3",
       "AssetKind": "All",
@@ -238,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\CJ4O7Z6SCCOB6TI3.CJ4O7Z6SCCOB6TI3"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\DGJNSYIF4VUEMQW9.DGJNSYIF4VUEMQW9",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\DGJNSYIF4VUEMQW9.DGJNSYIF4VUEMQW9",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/DGJNSYIF4VUEMQW9.DGJNSYIF4VUEMQW9",
       "AssetKind": "All",
@@ -255,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\DGJNSYIF4VUEMQW9.DGJNSYIF4VUEMQW9"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\EO0T5B0UHIH2IGN8",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\EO0T5B0UHIH2IGN8",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/EO0T5B0UHIH2IGN8",
       "AssetKind": "All",
@@ -272,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\EO0T5B0UHIH2IGN8"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\G3284SW6VOQOH157.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\G3284SW6VOQOH157.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/G3284SW6VOQOH157.jpg",
       "AssetKind": "All",
@@ -289,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\G3284SW6VOQOH157.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\GG2SQPBFQ2JIS05U.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\GG2SQPBFQ2JIS05U.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/GG2SQPBFQ2JIS05U.jpg",
       "AssetKind": "All",
@@ -306,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\GG2SQPBFQ2JIS05U.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\HIDVH2PSWM35O03E.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\HIDVH2PSWM35O03E.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/HIDVH2PSWM35O03E.png",
       "AssetKind": "All",
@@ -323,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\HIDVH2PSWM35O03E.png"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\HOTVAZKQNZOUCDWY.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\HOTVAZKQNZOUCDWY.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/HOTVAZKQNZOUCDWY.jpg",
       "AssetKind": "All",
@@ -340,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\HOTVAZKQNZOUCDWY.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\K5TYE3RO7QG3VU9V.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\K5TYE3RO7QG3VU9V.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/K5TYE3RO7QG3VU9V.jpg",
       "AssetKind": "All",
@@ -357,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\K5TYE3RO7QG3VU9V.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\KNX3HN5ZMGXFHI41.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\KNX3HN5ZMGXFHI41.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/KNX3HN5ZMGXFHI41.png",
       "AssetKind": "All",
@@ -374,10 +391,27 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\KNX3HN5ZMGXFHI41.png"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\LT2ZY3XWBZ5WXTE5.LT2ZY3XWBZ5WXTE5",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\LAAV2OVYH1PO4BV2.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/LAAV2OVYH1PO4BV2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\LAAV2OVYH1PO4BV2.jpg"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\LT2ZY3XWBZ5WXTE5.LT2ZY3XWBZ5WXTE5",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/LT2ZY3XWBZ5WXTE5.LT2ZY3XWBZ5WXTE5",
       "AssetKind": "All",
@@ -391,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\LT2ZY3XWBZ5WXTE5.LT2ZY3XWBZ5WXTE5"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\MZF0CHM3L1ZER64A.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\MZF0CHM3L1ZER64A.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/MZF0CHM3L1ZER64A.jpg",
       "AssetKind": "All",
@@ -408,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\MZF0CHM3L1ZER64A.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\NCP9Y24AGV8RURCE.NCP9Y24AGV8RURCE",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\NCP9Y24AGV8RURCE.NCP9Y24AGV8RURCE",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/NCP9Y24AGV8RURCE.NCP9Y24AGV8RURCE",
       "AssetKind": "All",
@@ -425,10 +459,44 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\NCP9Y24AGV8RURCE.NCP9Y24AGV8RURCE"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\S55XYOQQZSJXEW4D.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\OPWNC1SNZ8CQBUMA.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/OPWNC1SNZ8CQBUMA.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\OPWNC1SNZ8CQBUMA.jpg"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\QHZ9F4PCCKAZOOT7.png",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/QHZ9F4PCCKAZOOT7.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\QHZ9F4PCCKAZOOT7.png"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\S55XYOQQZSJXEW4D.png",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/S55XYOQQZSJXEW4D.png",
       "AssetKind": "All",
@@ -442,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\S55XYOQQZSJXEW4D.png"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\SPKIPCJJ6L0DP8GG.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\SPKIPCJJ6L0DP8GG.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/SPKIPCJJ6L0DP8GG.jpg",
       "AssetKind": "All",
@@ -459,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\SPKIPCJJ6L0DP8GG.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\U6XVTR3UMB30XNPY.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\U6XVTR3UMB30XNPY.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/U6XVTR3UMB30XNPY.jpg",
       "AssetKind": "All",
@@ -476,10 +544,27 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\U6XVTR3UMB30XNPY.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\W9LNKR8LEFPAKBIJ.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\UDQGD3KVHY2RUQAG.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/UDQGD3KVHY2RUQAG.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\UDQGD3KVHY2RUQAG.png"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\W9LNKR8LEFPAKBIJ.png",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/W9LNKR8LEFPAKBIJ.png",
       "AssetKind": "All",
@@ -493,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\W9LNKR8LEFPAKBIJ.png"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\X7ULJH66R7SYQY6D.jpg",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\X7ULJH66R7SYQY6D.jpg",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/X7ULJH66R7SYQY6D.jpg",
       "AssetKind": "All",
@@ -510,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\X7ULJH66R7SYQY6D.jpg"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\XIW3HN3RAFCSM2XQ",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\XIW3HN3RAFCSM2XQ",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/XIW3HN3RAFCSM2XQ",
       "AssetKind": "All",
@@ -527,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\XIW3HN3RAFCSM2XQ"
     },
     {
-      "Identity": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\XVC4ZXPQO9VSY311.png",
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\XVC4ZXPQO9VSY311.png",
       "SourceId": "RentalBackEnd",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\DELL\\Desktop\\ProjetAspCar\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
       "BasePath": "_content/RentalBackEnd",
       "RelativePath": "Uploads/Offres/XVC4ZXPQO9VSY311.png",
       "AssetKind": "All",
@@ -542,6 +627,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\XVC4ZXPQO9VSY311.png"
+    },
+    {
+      "Identity": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\Uploads\\Offres\\YHIAU6ZB9BWO8L0L.jpg",
+      "SourceId": "RentalBackEnd",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\aspProjet2\\RentCarProject\\RentalBackEnd\\RentalBackEnd\\wwwroot\\",
+      "BasePath": "_content/RentalBackEnd",
+      "RelativePath": "Uploads/Offres/YHIAU6ZB9BWO8L0L.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Uploads\\Offres\\YHIAU6ZB9BWO8L0L.jpg"
     }
   ]
 }

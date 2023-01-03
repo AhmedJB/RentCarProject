@@ -1,4 +1,4 @@
-import React from "react";
+import React , {useState,useContext,useEffect} from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -12,123 +12,45 @@ import CarImageD3 from "../../assets/CarsImages/car1D4.jpg";
 import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
+import Checker from "../../components/General/Checker";
+import { UserContext } from "../../contexts/User";
+import {toast} from "react-toastify"
+import { req,base, deleteReq } from "../../utils";
 
 function ManageOffresAdminPage() {
 
-  const data = [
-    {
-      title: "Koenigsegg",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "MG ZX Exclusice",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage2,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 50000.00,
-    },
-    {
-      title: "New MG ZS",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage3,
+  const [data,setData] = useState([]);
+  const [user,setUser] = useContext(UserContext);
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Nissan GT - R",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage1,
+  const deleteOffre = async (id) => {
+    let resp = await deleteReq("offres/"+id)
+    if (resp){
+      toast.success("deleted offre")
+      refreshOffers()
+    }else{
+      toast.error("failed deleting offre")
+    }
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage4,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage5,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "kamal",
-      imageUrl: CarImage1,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-  ]; 
+  }
+
+  const refreshOffers = async () => {
+    let resp = await req("createoffer/" + user.user.user.uid);
+    if (resp){
+      console.log(resp);
+      setData(resp);
+      toast.success("Fetched the data");
+    }else{
+      toast.error("failed fetching data");
+    }
+  }
+
+  useEffect(() => {
+
+    refreshOffers().then(() => console.log("fetched offers"))
+
+  },[user])
+
+  
 
   return (
     <>
@@ -148,18 +70,21 @@ function ManageOffresAdminPage() {
         {data.map((e, i) => {
           return (
             <ComponentCar
-              key={"card-" + i}
-              title={e.title}
-              marque={e.marque}
-                imageUrl={e.imageUrl}
-              owner={e.owner}
+              key={"cardadm-" + i}
+              title={e.offre.titre}
+              marque={e.offre.marque}
+              imageUrl={ base  +  e.images[0].imagePath}
+              owner={e.uinfo.nom}
               ButtonTitle={"Delete Offre"}
-              CapacityLitre={e.CapacityLitre}
-              TypeMorAuto={e.TypeMorAuto}
-              NmbrPlace={e.NmbrPlace}
-              PriceCar={e.PriceCar}
-              favoris={e.favoris}
-              couleur={e.couleur}
+              CapacityLitre={e.offre.km}
+              TypeMorAuto={"Manual"}
+              NmbrPlace={e.offre.nbrPlace}
+              PriceCar={e.offre.prix}
+              favoris={e.isFavoris}
+              couleur={e.offre.couleur}
+              offreId={e.offre.offreId}
+              refresh = {refreshOffers}
+              handleSelect = {() => { deleteOffre(e.offre.offreId)  }}
               inAdmin={true}
             />
           );

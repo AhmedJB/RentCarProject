@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import Footer from '../../components/Footer';
 import Header from '../../components/General/Header';
 import HomePageComponent from '../../components/HomePageComponent';
@@ -10,87 +10,34 @@ import CarImage4 from "../../assets/CarsImages/car 4.svg";
 import CarImage5 from "../../assets/CarsImages/car 5.svg";
 import CarImage1 from "../../assets/CarsImages/car 1.svg";
 import Checker from '../../components/General/Checker';
+import { UserContext } from '../../contexts/User';
+import { req,base } from '../../utils';
+import Reservation from '../../components/Reservation';
+import {toast} from "react-toastify"
 
 function HistoricPage() {
 
-    const data = [
-        {
-            StateCar: "Car You Rented",
-          title: "Koenigsegg",
-          marque: "Tesla",
-           owner : "Boujdouri",
-           date :"12-05-2021",
-           imageUrl: CarImage3,
-        //   buttonText: "Rent Now",
-          CapacityLitre: 10000,
-          couleur:"Noir",
-          TypeMorAuto: "Manual",
-        //   favoris:false,
-           NmbrPlace: 2,
-           PriceCar: 3000.00,
-        },
-        {
-          StateCar: "Car You Rented",
-          title: "MG ZX Exclusice",
-          marque: "Tesla",
-          owner : "Boujdouri",
-          date :"12-05-2021",
-          imageUrl: CarImage1,
-        //   buttonText: "Rent Now",
-          CapacityLitre: 10000,
-           couleur:"Noir",
-           TypeMorAuto: "Manual",
-        //   favoris:true,
-          NmbrPlace: 2,
-          PriceCar: 50000.00,
-        },
-        {
-            StateCar: "Car You Rented",
-            title: "MG ZX Exclusice",
-            marque: "Tesla",
-            owner : "Boujdouri",
-            date :"12-05-2021",
-            imageUrl: CarImage4,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-          {
-            StateCar: "Your Car Was Rented",
-            title: "MG ZX Exclusice",
-            marque: "Tesla",
-            owner : "Boujdouri",
-            date :"12-05-2021",
-            imageUrl: CarImage5,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-          {
-            StateCar: "Your Car Was Rented",
-            title: "MG ZX Exclusice",
-            marque: "Tesla",
-            owner : "Boujdouri",
-            date :"12-05-2021",
-            imageUrl: CarImage4,
-          //   buttonText: "Rent Now",
-            CapacityLitre: 10000,
-             couleur:"Noir",
-             TypeMorAuto: "Manual",
-          //   favoris:true,
-            NmbrPlace: 2,
-            PriceCar: 50000.00,
-          },
-        
-      ];
+  const [data,setData] = useState([]);
+  const [user,setUser] = useContext(UserContext);
+  const [openModal,setOpenModal] = useState(false);
+  const [selectedOffre,setSelectedOffre] = useState(null);
+
+  const refreshOffers = async () => {
+    let resp = await req("createoffer/gethistoric/" + user.user.user.uid);
+    if (resp){
+      console.log(resp);
+      setData(resp);
+      toast.success("Fetched the data");
+    }else{
+      toast.error("failed fetching data");
+    }
+  }
+
+  useEffect(() => {
+
+    refreshOffers().then(() => console.log("fetched offers"))
+
+  },[user])
 
     return (
       <>
@@ -106,19 +53,21 @@ function HistoricPage() {
           return (
             <HistoricCar
              //key={"card-" + i}
-             StateCar={e.StateCar}
-              title={e.title}
-             marque={e.marque}
-             date={e.date}
-              imageUrl={e.imageUrl}
-               owner={e.owner}
-            //   buttonText={"Rent Now"}
-               CapacityLitre={e.CapacityLitre}
-               TypeMorAuto={e.TypeMorAuto}
-               NmbrPlace={e.NmbrPlace}
-               PriceCar={e.PriceCar}
-            //   favoris={e.favoris}
-              couleur={e.couleur}
+             StateCar={"You rented a car"}
+             title={e.offre.titre}
+             marque={e.offre.marque}
+             imageUrl={ base  +  e.images[0].imagePath}
+             owner={e.uinfo.nom}
+             ButtonTitle={"Rent Now"}
+             CapacityLitre={e.offre.km}
+             TypeMorAuto={"Manual"}
+             NmbrPlace={e.offre.nbrPlace}
+             PriceCar={e.offre.prix}
+             favoris={e.isFavoris}
+             couleur={e.offre.couleur}
+             offreId={e.offre.offreId}
+             refresh = {refreshOffers}
+             handleSelect = {() => { setSelectedOffre(e); setOpenModal(true)  }}
             />
           );
         })}
@@ -126,6 +75,11 @@ function HistoricPage() {
        <Footer/>
 
       </Checker>
+      <Reservation
+    open = {[openModal,setOpenModal]}
+    offre = {selectedOffre}
+   
+    />
        
     </>
     )

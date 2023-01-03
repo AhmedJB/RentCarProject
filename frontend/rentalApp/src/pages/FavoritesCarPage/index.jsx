@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState , useEffect } from "react";
 import ComponentCar from "../../components/OffrePageComponent/ComponentCar";
 import CarImage from "../../assets/CarsImages/car.svg";
 import CarImage2 from "../../assets/CarsImages/car 2.svg";
@@ -13,123 +13,35 @@ import Header from "../../components/General/Header";
 import OffreDetailsCar from "../../components/OffreDetails/OffreDetailsCar"
 import Footer from "../../components/Footer"
 import Checker from "../../components/General/Checker";
+import { UserContext } from "../../contexts/User";
+import { req,base } from "../../utils";
+import {toast} from "react-toastify"
+import Reservation from "../../components/Reservation";
 
 function FavoritesCarPage() {
 
-  const data = [
-    {
-      title: "Koenigsegg",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "MG ZX Exclusice",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage2,
-      buttonText: "Rent Now",
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 50000.00,
-    },
-    {
-      title: "New MG ZS",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage3,
+  const [data,setData] = useState([]);
+  const [user,setUser] = useContext(UserContext);
+  const [openModal,setOpenModal] = useState(false);
+  const [selectedOffre,setSelectedOffre] = useState(null);
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Nissan GT - R",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage1,
+  const refreshOffers = async () => {
+    let resp = await req("favorite/" + user.user.user.uid);
+    if (resp){
+      console.log(resp);
+      setData(resp);
+      toast.success("Fetched the data");
+    }else{
+      toast.error("failed fetching data");
+    }
+  }
 
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage4,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage5,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "Boujdouri",
-      imageUrl: CarImage,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-    {
-      title: "Car 1",
-      marque: "Tesla",
-      owner : "kamal",
-      imageUrl: CarImage1,
-      CapacityLitre: 10000,
-      couleur:"Noir",
-      TypeMorAuto: "Manual",
-      favoris:true,
-      NmbrPlace: 2,
-      PriceCar: 99.00,
-    },
-  ]; 
+  useEffect(() => {
+
+    refreshOffers().then(() => console.log("fetched offers"))
+
+  },[user])
+
 
   return (
     <>
@@ -138,7 +50,7 @@ function FavoritesCarPage() {
     <Header></Header>
       {/* title favorites Offres */}
       <div className="OffreDetails_container pt-[100px] container mx-auto flex flex-wrap justify-center px-20 ">
-            <h2 className="px-6 py-6 my-12 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">My Favorites Car </h2>
+            <h2 className="px-6 py-6 my-12 text-[50px] font-bold text-gray-900  border-b-2 border-blue-500 ">My Favorites Cars </h2>
          
          
       </div>
@@ -150,21 +62,27 @@ function FavoritesCarPage() {
        
         {data.map((e, i) => {
           return (
+            
             <ComponentCar
-              key={"card-" + i}
-              title={e.title}
-              marque={e.marque}
-              imageUrl={e.imageUrl}
-              owner={e.owner}
+              key={"cardfavpage-" + i}
+              title={e.offre.titre}
+              marque={e.offre.marque}
+              imageUrl={ base  +  e.images[0].imagePath}
+              owner={e.uinfo.nom}
               ButtonTitle={"Rent Now"}
-              CapacityLitre={e.CapacityLitre}
-              TypeMorAuto={e.TypeMorAuto}
-              NmbrPlace={e.NmbrPlace}
-              PriceCar={e.PriceCar}
-              favoris={e.favoris}
-              couleur={e.couleur}
-              inAdmin={false}
+              CapacityLitre={e.offre.km}
+              TypeMorAuto={"Manual"}
+              NmbrPlace={e.offre.nbrPlace}
+              PriceCar={e.offre.prix}
+              favoris={e.isFavoris}
+              couleur={e.offre.couleur}
+              offreId={e.offre.offreId}
+              refresh = {refreshOffers}
+              handleSelect = {() => { setSelectedOffre(e); setOpenModal(true)  }}
+              
+              
             />
+            
           );
         })}
       </div>
@@ -172,6 +90,11 @@ function FavoritesCarPage() {
 
        <Footer/>
     </Checker>
+    <Reservation
+    open = {[openModal,setOpenModal]}
+    offre = {selectedOffre}
+   
+    />
      
 
       
